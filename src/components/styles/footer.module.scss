@@ -1,0 +1,22 @@
+.footer {
+    height: 3rem;
+    bottom: 0px;
+    position: fixed;
+    overflow: hide;
+    width: 100vw;
+    background-image: linear-gradient(rgb(131, 131, 247), rgb(13, 0, 255));
+    // background-color: blue;
+}
+
+.footer button{
+    height: 3rem;
+    background-color: green;
+    font-size: 1.45rem;
+    font-family: 'MS Sans-serif', sans-serif;
+    font-weight: 700;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

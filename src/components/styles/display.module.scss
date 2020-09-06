@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.desktop {
+    z-index: -2;
+    width: 100vw;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    margin: 0;
+}
+
+.icon img{
+    z-index: 1;
+    // width: 25px;
+    max-height: 100px;
+}
