@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Layout from "../components/layout";
 import Display from "../components/display";
+import Window from "../components/window";
 import "./styles/index.scss"
 
 class Index extends Component {
@@ -13,7 +14,9 @@ class Index extends Component {
   render() {
     return (
         <Layout>
-          <Display />
+          <Display>
+            <Window/>
+          </Display>
         </Layout>
       )
   }
