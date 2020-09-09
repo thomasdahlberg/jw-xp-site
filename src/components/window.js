@@ -4,7 +4,8 @@ import windowStyles from "./styles/window.module.scss";
 const Window = (props) => {
     return(
         <div className={windowStyles.container}>
-            <p>This is some sample text</p>
+            <div className={windowStyles.titleBar}><p>Paintings</p></div>
+            <div className={windowStyles.toolBar}></div>
         </div>
     )
 }

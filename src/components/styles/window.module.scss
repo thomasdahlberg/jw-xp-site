@@ -1,6 +1,31 @@
 .container {
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 500px;
     background-color: white;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: solid #255fdc 4px;
+    box-shadow: 2px 2px 2px #00168f;
+}
+
+.title-bar {
+    background-image: linear-gradient(0deg,#0268fb, #0254e4 80%, #338fff);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: 2px 2px black;
+    padding-left: 1rem;
+    max-height: 2rem;
+    display: flex;
+}
+
+.title-bar p{
+    margin-top: .5rem;
+}
+
+.tool-bar {
+    height: 3rem;
+    background-color: #f0f0e4;
+    border-bottom: #d2d7d7 solid 2px;
 }
