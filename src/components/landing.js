@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "gatsby"
 import landingStyles from './styles/landing.module.scss';
 
 const Landing = (props) => {
@@ -17,7 +18,7 @@ const Landing = (props) => {
                     <div className={landingStyles.vertTrim}></div>
                     <div className={landingStyles.enterWrapper}>
                         <div className={landingStyles.enter}>
-                            <button><img src="./images/avatar.png" alt="James Avatar"/></button>
+                            <Link to="/desktop"><img src="./images/avatar.png" alt="James Avatar"/></Link>
                             <div className={landingStyles.avatarName}>
                                 <h2>James</h2>
                             </div>

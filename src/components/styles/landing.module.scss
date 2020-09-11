@@ -71,7 +71,11 @@
 }
 
 
-.enter button {
+.enter a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
     margin-left: 1rem;
     margin-right: 1rem;
     height: 6vh;
@@ -82,7 +86,7 @@
 }
 
 .enter img {
-    max-height: 4vh;
+    max-height: 80%;
 }
 
 .macro-hard {
