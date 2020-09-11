@@ -3,6 +3,7 @@ import Layout from "../components/layout";
 import Display from "../components/display";
 import Window from "../components/window";
 import "./styles/index.scss"
+import Landing from "../components/landing";
 
 class Index extends Component {
   constructor(props) {
@@ -13,11 +14,12 @@ class Index extends Component {
   }
   render() {
     return (
-        <Layout>
-          <Display>
-            <Window/>
-          </Display>
-        </Layout>
+        // <Layout>
+        //   <Display>
+        //     <Window/>
+        //   </Display>
+        // </Layout>
+        <Landing />
       )
   }
 }
