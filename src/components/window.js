@@ -6,6 +6,9 @@ const Window = (props) => {
         <div className={windowStyles.container}>
             <div className={windowStyles.titleBar}><p>Paintings</p></div>
             <div className={windowStyles.toolBar}></div>
+            <div className={windowStyles.content}>
+                <aside className={windowStyles.caption}></aside>
+            </div>
         </div>
     )
 }
