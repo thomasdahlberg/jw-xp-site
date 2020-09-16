@@ -11,17 +11,25 @@ const Display = (props) =>  {
                 >
                     <div className={displayStyles.icon}>
                         <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
-                        <a href="#">Painting</a>
+                        <p>Painting</p>
                     </div>
                 </Draggable>
-                <div className={displayStyles.icon}>
-                    <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
-                    <a href="#">Videos</a>
-                </div>
-                <div className={displayStyles.icon}>
-                    <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
-                    <a href="#">Sculpture</a>
-                </div>
+                <Draggable
+                    axis="both"
+                >
+                    <div className={displayStyles.icon}>
+                        <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
+                        <p>Videos</p>
+                    </div>
+                </Draggable>
+                <Draggable
+                    axis="both"
+                >
+                    <div className={displayStyles.icon}>
+                        <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
+                        <p>Sculpture</p>
+                    </div>
+                </Draggable>
             </nav>
             <div className={displayStyles.children}>
                 {props.children}
