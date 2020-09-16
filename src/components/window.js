@@ -7,13 +7,21 @@ const Window = (props) => {
         <Draggable
             axis="both"
         >
-            <div id="painting" className={windowStyles.container}>
-                <div className={windowStyles.titleBar}><p>Paintings</p></div>
+        {props.active ? 
+            <div className={windowStyles.container}>
+                <div className={windowStyles.titleBar}>
+                    <p>{props.name}</p>
+                    <button id={props.name} onClick={props.handleCloseWindow}>X</button>    
+                </div>
                 <div className={windowStyles.toolBar}></div>
                 <div className={windowStyles.content}>
                     <aside className={windowStyles.caption}></aside>
                 </div>
             </div>
+            :
+            <div></div>
+        }
+            
         </Draggable>
     )
 }

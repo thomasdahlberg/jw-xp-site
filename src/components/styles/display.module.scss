@@ -13,13 +13,12 @@
 }
 
 .icon {
-    // border: black solid 2px;
     padding: 1rem;
-    width:70px;
+    width:100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .icon p {
@@ -29,6 +28,7 @@
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
     font-size: .9rem;
+    cursor: pointer;
 }
 
 .icon p:active {
@@ -39,6 +39,10 @@
 
 .folder {
     width: 65px;
+}
+
+.recycle {
+    width: 55px;
 }
 
 .nav-icons {

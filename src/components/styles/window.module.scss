@@ -1,6 +1,4 @@
 .container {
-    z-index: -10;
-    opacity: 0;
     margin-top: 2rem;
     width: 65vw;
     height: 80vh;
@@ -21,10 +19,36 @@
     padding-left: 1rem;
     max-height: 2rem;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.title-bar p{
-    margin-top: .5rem;
+.title-bar button {
+    background-color: #dc3509;
+    background-image: linear-gradient(135deg, #dda2b6, #dc3509);
+    border-radius: 6px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: 900;
+    font-size: 1.25rem;
+    font-stretch: extra-expanded;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 1.75rem;
+    height: 1.75rem;
+    // text-align: center;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px #00168f;
+}
+
+.title-bar button:active {
+    background-image: none;
+    box-shadow: none;
+    background-color: #dc3509;
+}
+
+.title-bar button:focus {
+    outline: 0;
 }
 
 .tool-bar {

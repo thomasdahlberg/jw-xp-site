@@ -9,27 +9,36 @@ const Display = (props) =>  {
                 <Draggable
                     axis="both"
                 >
-                    <div className={displayStyles.icon}>
-                        <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
-                        <p>Painting</p>
+                    <div id="Painting"className={displayStyles.icon} onDoubleClick={props.handleClickWindow}>
+                        <img id="Painting" className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
+                        <p id="Painting">Painting</p>
                     </div>
                 </Draggable>
                 <Draggable
                     axis="both"
                 >
-                    <div className={displayStyles.icon}>
-                        <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
-                        <p>Videos</p>
+                    <div id="Videos" className={displayStyles.icon} onDoubleClick={props.handleClickWindow}>
+                        <img id="Videos" className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
+                        <p id="Videos">Videos</p>
                     </div>
                 </Draggable>
                 <Draggable
                     axis="both"
                 >
-                    <div className={displayStyles.icon}>
-                        <img className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
-                        <p>Sculpture</p>
+                    <div id="Sculpture" className={displayStyles.icon} onDoubleClick={props.handleClickWindow}>
+                        <img id="Sculpture" className={displayStyles.folder} src="./images/foldericon.png" alt="folder-icon"/>
+                        <p id="Sculpture">Sculpture</p>
                     </div>
                 </Draggable>
+                <Draggable
+                    axis="both"
+                >
+                    <div id="Recycle Bin" className={displayStyles.icon} onDoubleClick={props.handleClickWindow}>
+                        <img id="Recycle Bin" className={displayStyles.recycle} src="./images/recycle.png" alt="folder-icon"/>
+                        <p id="Recycle Bin">Recycle Bin</p>
+                    </div>
+                </Draggable>
+
             </nav>
             <div className={displayStyles.children}>
                 {props.children}
