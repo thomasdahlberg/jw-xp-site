@@ -5,6 +5,7 @@ const Footer = (props) => {
   return (
     <footer className={footerStyles.footer}>
         <button><em>start</em></button>
+        {props.painting ? <button>Painting</button> : null}
     </footer>
   )
 }

@@ -31,7 +31,12 @@ class Desktop extends Component {
 
   render() {
     return (
-        <Layout>
+        <Layout
+        painting = {this.state.Painting}
+        sculpture = {this.state.Sculpture}
+        videos = {this.state.Videos}
+        recycle = {this.state["Recycle Bin"]}
+        >
             <Display
               handleClickWindow = {this.handleClickWindow}
             >

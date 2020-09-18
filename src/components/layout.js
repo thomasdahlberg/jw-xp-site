@@ -9,7 +9,12 @@ const Layout = (props) => {
             <div>
                 {props.children}
             </div>
-            <Footer />
+            <Footer
+            painting = {props.painting}
+            sculpture = {props.sculpture}
+            videos = {props.videos}
+            recycle = {props.recycle}
+            />
         </div>
     )
 }
