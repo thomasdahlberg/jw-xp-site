@@ -5,10 +5,10 @@ const Footer = (props) => {
   return (
     <footer className={footerStyles.footer}>
         <button className={footerStyles.start}><em>start</em></button>
-        {props.painting ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Painting</button> : null}
-        {props.sculpture ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Sculpture</button> : null}
-        {props.videos ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Videos</button> : null}
-        {props.recycle ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Recycling Bin</button> : null}
+        {props.painting ? <a className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Painting</a> : null}
+        {props.sculpture ? <a className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Sculpture</a> : null}
+        {props.videos ? <a className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Videos</a> : null}
+        {props.recycle ? <a className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Recycling Bin</a> : null}
     </footer>
   )
 }

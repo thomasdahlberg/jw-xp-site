@@ -11,7 +11,11 @@ class Desktop extends Component {
       Painting: false,
       Videos: false,
       Sculpture: false,
-      "Recycle Bin": false
+      "Recycle Bin": false,
+      hidePaint: false,
+      hideVideos: false,
+      hideSculpt: false,
+      hideRecycle: false
     }
   }
 
@@ -26,6 +30,13 @@ class Desktop extends Component {
     e.preventDefault();
     this.setState({
       [e.target.id]: false
+    })
+  }
+
+  handleHideWindow = (e) => {
+    e.preventDefault();
+    this.setState({
+      [e.target.id]: true
     })
   }
 
