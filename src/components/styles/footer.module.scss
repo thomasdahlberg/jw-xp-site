@@ -5,10 +5,10 @@
     overflow: hide;
     width: 100vw;
     background-image: linear-gradient(0deg, #255fdc 90%, #3683f2);
-    // background-color: blue;
+    display: flex;
 }
 
-.footer button{
+.start {
     height: 3rem;
     background-image: linear-gradient(0deg, #259a25 80%, #125b2e);
     font-size: 1.45rem;
@@ -23,5 +23,18 @@
 }
 
 .tab {
-    margin-left: 1rem;
+    background-color: #1b50b8;
+    background-image: linear-gradient(45deg, #1b50b8, #2558c3);
+    color: white;
+    padding: .5rem 6rem .5rem 1rem;
+    border-radius: .25rem;
+    border: solid #113990 2px;
+    font-family: 'MS Sans-serif', sans-serif;
+    margin: .1rem 2rem;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.tab img {
+    max-width: 1.5rem;
 }

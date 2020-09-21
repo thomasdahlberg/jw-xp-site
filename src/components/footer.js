@@ -5,10 +5,10 @@ const Footer = (props) => {
   return (
     <footer className={footerStyles.footer}>
         <button className={footerStyles.start}><em>start</em></button>
-        {props.painting ? <button className={footerStyles.tab}>Painting</button> : null}
-        {props.sculpture ? <button className={footerStyles.tab}>Sculpture</button> : null}
-        {props.videos ? <button className={footerStyles.tab}>Videos</button> : null}
-        {props.recycle ? <button className={footerStyles.tab}>Recycling Bin</button> : null}
+        {props.painting ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Painting</button> : null}
+        {props.sculpture ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Sculpture</button> : null}
+        {props.videos ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Videos</button> : null}
+        {props.recycle ? <button className={footerStyles.tab}><img src="./images/foldericon.png" alt="folder-icon"/> Recycling Bin</button> : null}
     </footer>
   )
 }
