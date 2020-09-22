@@ -14,6 +14,11 @@ const Layout = (props) => {
             sculpture = {props.sculpture}
             videos = {props.videos}
             recycle = {props.recycle}
+            hidePainting = {props.hidePainting}
+            hideVideos = {props.hideVideos}
+            hideSculpture = {props.hideSculpture}
+            hideRecycle = {props.hideRecycle}
+            handleHideWindow = {props.handleHideWindow}
             />
         </div>
     )

@@ -12,17 +12,18 @@ class Desktop extends Component {
       Videos: false,
       Sculpture: false,
       "Recycle Bin": false,
-      hidePaint: false,
+      hidePainting: false,
       hideVideos: false,
-      hideSculpt: false,
-      hideRecycle: false
+      hideSculpture: false,
+      "hideRecycle Bin": false
     }
   }
 
   handleClickWindow = (e) => {
     e.preventDefault();
     this.setState({
-      [e.target.id]: true
+      [e.target.id]: true,
+      [`hide${e.target.id}`]: false
     })
   }
 
@@ -35,9 +36,15 @@ class Desktop extends Component {
 
   handleHideWindow = (e) => {
     e.preventDefault();
-    this.setState({
-      [e.target.id]: true
-    })
+    if(this.state[e.target.id]){
+      this.setState({
+        [e.target.id]: false
+      })
+    } else {
+      this.setState({
+        [e.target.id]: true
+      })
+    }
   }
 
   render() {
@@ -47,27 +54,36 @@ class Desktop extends Component {
         sculpture = {this.state.Sculpture}
         videos = {this.state.Videos}
         recycle = {this.state["Recycle Bin"]}
+        hidePainting = {this.state.hidePainting}
+        hideSculpture = {this.state.hideSculpture}
+        hideVideos = {this.state.hideVideos}
+        hideRecycle = {this.state["hideRecycle Bin"]}
+        handleHideWindow = {this.handleHideWindow}
         >
             <Display
               handleClickWindow = {this.handleClickWindow}
             >
                 <Window 
                 active = {this.state.Painting}
+                hidden = {this.state.hidePainting}
                 name = {"Painting"}
                 handleCloseWindow = {this.handleCloseWindow}
                 />
                 <Window
                 active = {this.state.Videos}
+                hidden = {this.state.hideVideos}
                 name = {"Videos"}
                 handleCloseWindow = {this.handleCloseWindow}
                 />
                 <Window
                 active = {this.state.Sculpture}
+                hidden = {this.state.hideSculpture}
                 name = {"Sculpture"}
                 handleCloseWindow = {this.handleCloseWindow}
                 />
                 <Window
-                active = {this.state.["Recycle Bin"]}
+                active = {this.state["Recycle Bin"]}
+                hidden = {this.state["hideRecycle Bin"]}
                 name = {"Recycle Bin"}
                 handleCloseWindow = {this.handleCloseWindow}
                 />

@@ -7,7 +7,7 @@ const Window = (props) => {
         <Draggable
             axis="both"
         >
-        {props.active ? 
+        {props.active && !props.hidden ? 
             <div className={windowStyles.container}>
                 <div className={windowStyles.titleBar}>
                     <p>{props.name}</p>
