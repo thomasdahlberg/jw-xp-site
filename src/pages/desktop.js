@@ -36,13 +36,13 @@ class Desktop extends Component {
 
   handleHideWindow = (e) => {
     e.preventDefault();
-    if(this.state[e.target.id]){
+    if(this.state[`hide${e.target.id}`]){
       this.setState({
-        [e.target.id]: false
+        [`hide${e.target.id}`]: false
       })
     } else {
       this.setState({
-        [e.target.id]: true
+        [`hide${e.target.id}`]: true
       })
     }
   }
