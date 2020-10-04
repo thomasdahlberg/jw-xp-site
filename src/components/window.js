@@ -3,9 +3,6 @@ import windowStyles from "./styles/window.module.scss";
 import Draggable from 'react-draggable';
 
 class Window extends Component{
-    constructor(props) {
-        super(props)
-    }
         
     render(){
         const posStyle = {
@@ -36,7 +33,13 @@ class Window extends Component{
                             <button id={this.props.name} onClick={this.props.handleCloseWindow}>X</button>    
                         </div>
                     </div>
-                    <div className={windowStyles.toolBar}></div>
+                    <div className={windowStyles.toolBar}>
+                        <ul className={windowStyles.menus}>
+                            <li>File</li>
+                            <li>Edit</li>
+                            <li>View</li>
+                        </ul>
+                    </div>
                     <div className={windowStyles.content}>
                         <aside className={windowStyles.caption}></aside>
                     </div>

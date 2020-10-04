@@ -14,7 +14,7 @@
 .title-bar {
     background-image: linear-gradient(0deg,#0268fb, #0254e4 80%, #338fff);
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'MS Sans-serif', sans-serif;
     text-shadow: 2px 2px black;
     padding-left: 1rem;
     max-height: 2rem;
@@ -52,6 +52,7 @@
 }
 
 .tool-bar {
+    padding-left: 0px;
     height: 3rem;
     background-color: #f0f0e4;
     border-bottom: #d2d7d7 solid 2px;
@@ -67,3 +68,17 @@
     background-image: linear-gradient(0deg, #6376d5, #79a1e9);
     height: 70vh;
 }
+
+.menus {
+    display: flex;
+    list-style-type: none;
+    margin-top: .25rem;
+    padding-left: 1rem;
+}
+
+.menus li {
+    margin-right: .5rem;
+    font-family: 'MS Sans-serif', sans-serif;
+    font-size: .9rem;
+}
+
