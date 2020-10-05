@@ -1,18 +1,20 @@
-import React, {Component} from 'react';
+import React from 'react';
+import startStyles from './styles/start.module.scss'
 
-class Start extends Component {
-    constructor(props) {
-        super(props)
-    }
 
-    render() {
-        return(
-            <div>
-                Start Menu Component
-            </div>
-        )
-    }
-
+const Start = (props) => {
+    return(
+        <div>
+            {this.props.active ? 
+                <div className={startStyles.container}>
+                    <div className={startStyles.content}>
+                        <aside className={startStyles.caption}></aside>
+                    </div>
+                </div>
+                : null
+            }
+        </div>
+    )
 }
 
 export default Start;

@@ -8,6 +8,7 @@ class Desktop extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      Start: false,
       Painting: false,
       Videos: false,
       Sculpture: false,
@@ -63,6 +64,10 @@ class Desktop extends Component {
             <Display
               handleClickWindow = {this.handleClickWindow}
             >
+                <Start
+                active = {this.state.Start}
+                />
+
                 <Window 
                 active = {this.state.Painting}
                 hidden = {this.state.hidePainting}
