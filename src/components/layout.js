@@ -10,15 +10,16 @@ const Layout = (props) => {
                 {props.children}
             </div>
             <Footer
-            painting = {props.painting}
-            sculpture = {props.sculpture}
-            videos = {props.videos}
-            recycle = {props.recycle}
-            hidePainting = {props.hidePainting}
-            hideVideos = {props.hideVideos}
-            hideSculpture = {props.hideSculpture}
-            hideRecycle = {props.hideRecycle}
-            handleHideWindow = {props.handleHideWindow}
+                start = {props.start}
+                painting = {props.painting}
+                sculpture = {props.sculpture}
+                videos = {props.videos}
+                recycle = {props.recycle}
+                hidePainting = {props.hidePainting}
+                hideVideos = {props.hideVideos}
+                hideSculpture = {props.hideSculpture}
+                hideRecycle = {props.hideRecycle}
+                handleHideWindow = {props.handleHideWindow}
             />
         </div>
     )
