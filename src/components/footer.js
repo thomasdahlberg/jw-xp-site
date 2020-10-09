@@ -6,6 +6,24 @@ class Footer extends Component {
     super(props)
     this.state = { footer: true }
   }
+  clockRef = React.createRef();
+
+  startTime = () => {
+    const node = this.clockRef.current;
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    m = this.checkTime(m);
+    node.innerText = `${h}:${m}`;
+    let t = setTimeout(this.startTime, 500);
+  }
+
+  checkTime = (i) => {
+    if (i < 10) i = '0' + i;
+    return i;
+  }
+
+  componentDidMount = () => this.startTime();
 
   render(){
     return (
@@ -15,6 +33,7 @@ class Footer extends Component {
           {this.props.sculpture ? <a id="Sculpture" className={this.props.hideSculpture ? footerStyles.tab : footerStyles.maxTab} onClick={this.props.handleHideWindow}><img src="./images/foldericon.png" alt="folder-icon"/> Sculpture</a> : null}
           {this.props.videos ? <a id="Videos" className={this.props.hideVideos ? footerStyles.tab : footerStyles.maxTab} onClick={this.props.handleHideWindow}><img src="./images/foldericon.png" alt="folder-icon"/> Videos</a> : null}
           {this.props.recycle ? <a id="Recycle Bin" className={this.props.hideRecycle ? footerStyles.tab : footerStyles.maxTab} onClick={this.props.handleHideWindow}><img src="./images/recycle.png" alt="folder-icon"/> Recycling Bin</a> : null}
+          <p id="clock" ref={this.clockRef} className={footerStyles.clock}></p>
       </footer>
     )
   }
