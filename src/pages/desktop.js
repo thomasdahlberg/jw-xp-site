@@ -5,6 +5,8 @@ import Window from "../components/window";
 import Start from "../components/start";
 import "./styles/index.scss"
 
+let workContent = require('../components/workContent');
+
 class Desktop extends Component {
   constructor(props) {
     super(props)
@@ -17,7 +19,8 @@ class Desktop extends Component {
       hideVideos: false,
       hideSculpture: false,
       "hideRecycle Bin": false,
-      hideStart: false
+      hideStart: false,
+      paintLib: workContent.paintLib
     }
   }
 
@@ -74,6 +77,7 @@ class Desktop extends Component {
                   active = {this.state.Painting}
                   hidden = {this.state.hidePainting}
                   name = {"Painting"}
+                  library = {this.state.paintLib}
                   handleCloseWindow = {this.handleCloseWindow}
                 />
                 <Window

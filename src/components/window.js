@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import windowStyles from "./styles/window.module.scss";
 import Draggable from 'react-draggable';
+const images = require.context("../../public/images", true);
 
 class Window extends Component{
         
@@ -42,6 +43,13 @@ class Window extends Component{
                     </div>
                     <div className={windowStyles.content}>
                         <aside className={windowStyles.caption}></aside>
+                        {this.props.library?
+                            this.props.library.map(({ type, title, file, id}, idx)=>
+                            <button className={windowStyles.button} key={idx} form={id}><img key={idx} id={id}  src={images(`./${type}/${file}.jpg`)} alt={title}/></button>
+                        )
+                        :
+                        null
+                        }
                     </div>
                 </div>
                 :
