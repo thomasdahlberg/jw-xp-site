@@ -6,7 +6,10 @@ const images = require.context("../../public/images", true);
 class Window extends Component{
 
     imageRef = React.createRef();
-    captionRef = React.createRef();
+    capTitleRef = React.createRef();
+    capYearRef = React.createRef();
+    capMatRef = React.createRef();
+    capDimRef = React.createRef();
     leftButRef = React.createRef();
     rightButRef = React.createRef();
 
@@ -16,12 +19,18 @@ class Window extends Component{
         e.target.localName === "img" ? selectedWork = this.props.library[e.target.id] : selectedWork = this.props.library[e.target.attributes[1].nodeValue];
         const libSize = this.props.library.length;
         const imageNode = this.imageRef.current;
-        const captionNode = this.captionRef.current;
+        const capTitleNode = this.capTitleRef.current;
+        const capYearNode = this.capYearRef.current;
+        const capMatNode = this.capMatRef.current;
+        const capDimNode = this.capDimRef.current;
         const leftButNode = this.leftButRef.current;
         const rightButNode = this.rightButRef.current;
         imageNode.src = images(`./${selectedWork.type}/${selectedWork.file}.jpg`);
         imageNode.alt = `${selectedWork.title}`;
-        captionNode.innerHTML = `<em>${selectedWork.title}</em>; ${selectedWork.year}; ${selectedWork.materials}; ${selectedWork.dimensions}`;
+        capTitleNode.innerText = `${selectedWork.title}`;
+        capYearNode.innerText = `${selectedWork.year}`;
+        capMatNode.innerText = `${selectedWork.materials}`;
+        capDimNode.innerText = `${selectedWork.dimensions}`;
         leftButNode.attributes[1].nodeValue = `${selectedWork.id - 1 >= 0 ? selectedWork.id - 1 : libSize-1}`;
         rightButNode.attributes[1].nodeValue = `${selectedWork.id + 1 < libSize ? selectedWork.id + 1 : 0}`;
     }    
@@ -63,7 +72,16 @@ class Window extends Component{
                     </div>
                     <div className={windowStyles.content}>
                         <aside className={windowStyles.caption}>
-                            <p ref={this.captionRef}>{this.props.library[0].title}</p>
+                            <div className={windowStyles.panel}>
+                                <div className={windowStyles.panheader}>
+                                    <p ref={this.capTitleRef}>{this.props.library[0].title}</p>
+                                </div>
+                                <ul className={windowStyles.panbody}>
+                                    <li ref={this.capYearRef}>{this.props.library[0].year}</li>
+                                    <li ref={this.capMatRef}>{this.props.library[0].materials}</li>
+                                    <li ref={this.capDimRef}>{this.props.library[0].dimensions}</li>
+                                </ul>
+                            </div>
                         </aside>
                     {this.props.library ?
                         <Fragment>

@@ -86,6 +86,10 @@
   background-color: #79a1e9;
   background-image: linear-gradient(0deg, #6376d5, #79a1e9);
   height: 89%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .menus {
@@ -175,4 +179,38 @@
 .imgnav {
   position: relative;
   top: 0;
+}
+
+.panel {
+  background-color: #d8dff2;
+  background-image: linear-gradient(45deg, #d8dff2, white 80%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 80%;
+  height: 30%;
+  margin-top: 5rem;
+}
+
+.panheader {
+  background-image: linear-gradient(0deg, #0268fb, #0254e4 80%, #338fff);
+  color: white;
+  font-family: "MS Sans-serif", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 900;
+  padding-left: 1rem;
+  max-height: 1.5rem;
+  display: flex;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #d2d7d7 solid 2px;
+}
+
+.panbody li {
+  padding-bottom: 0.5rem;
+  color: #425597;
+  font-size: 0.85rem;
+  font-weight: 400;
+  font-family: "MS Sans-serif", sans-serif;
 }
