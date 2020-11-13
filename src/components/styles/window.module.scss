@@ -23,7 +23,31 @@
   align-items: center;
 }
 
-.title-bar button {
+.titlebtns {
+  display: flex;
+}
+
+.titlebtns button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #6376d5;
+  background-image: linear-gradient(135deg, #6376d5, #79a1e9);
+  border-radius: 6px;
+  border-style: solid;
+  border-color: white;
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 2px #00168f;
+}
+
+.titlebtns button:nth-child(3) {
   background-color: #dc3509;
   background-image: linear-gradient(135deg, #dda2b6, #dc3509);
   border-radius: 6px;
@@ -42,10 +66,16 @@
   box-shadow: 2px 2px 2px #00168f;
 }
 
+.titlebtns button:nth-child(3):active {
+  background-color: #dc3509;
+  background-image: none;
+  box-shadow: none;
+}
+
 .title-bar button:active {
   background-image: none;
   box-shadow: none;
-  background-color: #dc3509;
+  background-color: #0254e4;
 }
 
 .title-bar button:focus {
@@ -187,12 +217,13 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   width: 80%;
-  height: 30%;
+  // height: 30%;
   margin-top: 5rem;
 }
 
 .panheader {
-  background-image: linear-gradient(0deg, #0268fb, #0254e4 80%, #338fff);
+  background-image: linear-gradient(0deg, #0268fb, #244baa 90%);
+  background-color: #244baa;
   color: white;
   font-family: "MS Sans-serif", sans-serif;
   font-size: 0.9rem;
@@ -202,15 +233,31 @@
   display: flex;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   border-bottom: #d2d7d7 solid 2px;
 }
 
+.panheader i {
+  margin-right: 1rem;
+}
+
+.panbody {
+  padding-left: 0;
+  list-style-type: none;
+}
+
 .panbody li {
+  align-items: center;
+  display: flex;
+  padding-left: 0.5rem;
   padding-bottom: 0.5rem;
   color: #425597;
   font-size: 0.85rem;
   font-weight: 400;
   font-family: "MS Sans-serif", sans-serif;
+}
+
+.panbody i {
+  margin-right: 1rem;
 }

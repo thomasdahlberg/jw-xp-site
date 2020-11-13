@@ -60,7 +60,11 @@ class Window extends Component{
                     <div className="handle">
                         <div className={windowStyles.titleBar}>
                             <p>{this.props.name}</p>
-                            <button id={this.props.name} onClick={this.props.handleCloseWindow}>X</button>    
+                            <div className={windowStyles.titlebtns}>
+                                <button id={this.props.name} onClick={this.props.handleHideWindow}><i id={this.props.name} onClick={this.props.handleHideWindow} className={"fa fa-window-minimize"} aria-hidden="true"></i></button>    
+                                <button id={this.props.name} onClick={this.props.handleCloseWindow}><i id={this.props.name} className={"fa fa-window-maximize"} aria-hidden="true"></i></button>    
+                                <button id={this.props.name} className={windowStyles.close} onClick={this.props.handleCloseWindow}>X</button>    
+                            </div>
                         </div>
                     </div>
                     <div className={windowStyles.toolBar}>
@@ -74,12 +78,22 @@ class Window extends Component{
                         <aside className={windowStyles.caption}>
                             <div className={windowStyles.panel}>
                                 <div className={windowStyles.panheader}>
-                                    <p ref={this.capTitleRef}>{this.props.library[0].title}</p>
+                                    <i className={"fa fa-file-image-o"} aria-hidden="true"></i>
+                                    <p ref={this.capTitleRef}>&nbsp;&nbsp;&nbsp;{this.props.library[0].title}</p>
                                 </div>
                                 <ul className={windowStyles.panbody}>
-                                    <li ref={this.capYearRef}>{this.props.library[0].year}</li>
-                                    <li ref={this.capMatRef}>{this.props.library[0].materials}</li>
-                                    <li ref={this.capDimRef}>{this.props.library[0].dimensions}</li>
+                                    <li>
+                                        <i className={"fa fa-calendar"} aria-hidden="true"></i>
+                                        <p ref={this.capYearRef}>&nbsp;&nbsp;&nbsp;{this.props.library[0].year}</p>
+                                    </li>
+                                    <li>
+                                        <i className={"fa fa-paint-brush"} aria-hidden="true"></i>
+                                        <p ref={this.capMatRef}>&nbsp;&nbsp;&nbsp;{this.props.library[0].materials}</p>
+                                    </li>
+                                    <li>
+                                        <i className={"fa fa-map"} aria-hidden="true"></i>
+                                        <p ref={this.capDimRef}>&nbsp;&nbsp;&nbsp;{this.props.library[0].dimensions}</p>
+                                    </li>
                                 </ul>
                             </div>
                         </aside>

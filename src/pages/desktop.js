@@ -79,24 +79,28 @@ class Desktop extends Component {
                   name = {"Painting"}
                   library = {this.state.paintLib}
                   handleCloseWindow = {this.handleCloseWindow}
+                  handleHideWindow = {this.handleHideWindow}
                 />
                 <Window
                   active = {this.state.Videos}
                   hidden = {this.state.hideVideos}
                   name = {"Videos"}
                   handleCloseWindow = {this.handleCloseWindow}
+                  handleHideWindow = {this.handleHideWindow}
                 />
                 <Window
                   active = {this.state.Sculpture}
                   hidden = {this.state.hideSculpture}
                   name = {"Sculpture"}
                   handleCloseWindow = {this.handleCloseWindow}
+                  handleHideWindow = {this.handleHideWindow}
                 />
                 <Window
                   active = {this.state["Recycle Bin"]}
                   hidden = {this.state["hideRecycle Bin"]}
                   name = {"Recycle Bin"}
                   handleCloseWindow = {this.handleCloseWindow}
+                  handleHideWindow = {this.handleHideWindow}
                 />
             </Display>
         </Layout>
