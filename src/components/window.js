@@ -1,10 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component, Fragment } from 'react';
 import windowStyles from "./styles/window.module.scss";
 import Draggable from 'react-draggable';
 const images = require.context("../../public/images", true);
 
 class Window extends Component{
-        
+
+    imageRef = React.createRef();
+    captionRef = React.createRef();
+    leftButRef = React.createRef();
+    rightButRef = React.createRef();
+
+    handleImageSelect = (e) => {
+        console.log(e.target.attributes[1].nodeValue);
+        let selectedWork;
+        e.target.localName === "img" ? selectedWork = this.props.library[e.target.id] : selectedWork = this.props.library[e.target.attributes[1].nodeValue];
+        const libSize = this.props.library.length;
+        const imageNode = this.imageRef.current;
+        const captionNode = this.captionRef.current;
+        const leftButNode = this.leftButRef.current;
+        const rightButNode = this.rightButRef.current;
+        imageNode.src = images(`./${selectedWork.type}/${selectedWork.file}.jpg`);
+        imageNode.alt = `${selectedWork.title}`;
+        captionNode.innerHTML = `<em>${selectedWork.title}</em>; ${selectedWork.year}; ${selectedWork.materials}; ${selectedWork.dimensions}`;
+        leftButNode.attributes[1].nodeValue = `${selectedWork.id - 1 >= 0 ? selectedWork.id - 1 : libSize-1}`;
+        rightButNode.attributes[1].nodeValue = `${selectedWork.id + 1 < libSize ? selectedWork.id + 1 : 0}`;
+    }    
     render(){
         const posStyle = {
             position: "fixed",
@@ -42,27 +62,53 @@ class Window extends Component{
                         </ul>
                     </div>
                     <div className={windowStyles.content}>
-                        <aside className={windowStyles.caption}></aside>
-                        {this.props.library?
-                            <div>
-                                <div className={windowStyles.bigimg}>
-                                    <div className={windowStyles.imgcont}>
-                                        <img src={images(`./${this.props.library[0].type}/${this.props.library[0].file}.jpg`)} alt={this.props.library[0].title}/>
-                                    </div>
-                                    <div className={windowStyles.imgnav}>
-                                        <button>|&lsaquo;</button>
-                                        <button>&rsaquo;|</button>
-                                    </div>
+                        <aside className={windowStyles.caption}>
+                            <p ref={this.captionRef}>{this.props.library[0].title}</p>
+                        </aside>
+                    {this.props.library ?
+                        <Fragment>
+                            <div className={windowStyles.bigimg}>
+                                <div className={windowStyles.imgcont}>
+                                    <img ref={this.imageRef} src={images(`./${this.props.library[0].type}/${this.props.library[0].file}.jpg`)} alt={this.props.library[0].title}/>
                                 </div>
-                                <div className={windowStyles.gallery}>
-                                    {this.props.library.map(({ type, title, file, id}, idx)=>
-                                        <button className={windowStyles.button} key={idx} form={id}><img key={idx} id={id}  src={images(`./${type}/${file}.jpg`)} alt={title}/></button>
-                                    )}
+                                <div className={windowStyles.imgnav}>
+                                    <button
+                                        id="l"
+                                        ref={this.leftButRef}
+                                        form={this.props.library[0].id - 1}
+                                        onClick={this.handleImageSelect}
+                                    >|&lsaquo;
+                                    </button>
+                                    <button
+                                        id="r" 
+                                        ref={this.rightButRef}
+                                        form={this.props.library[0].id + 1}
+                                        onClick={this.handleImageSelect}
+                                    >&rsaquo;|
+                                    </button>
                                 </div>
                             </div>
-                            :
-                            null
-                        }
+                            <div className={windowStyles.gallery}>
+                                {this.props.library.map(({ type, title, file, id }, idx)=>
+                                    <button
+                                        className={windowStyles.button}
+                                        key={idx}
+                                        form={id}
+                                        onClick={this.handleImageSelect}
+                                    >
+                                        <img
+                                            key={idx}
+                                            id={id}
+                                            src={images(`./${type}/${file}.jpg`)}
+                                            alt={title}
+                                        />
+                                    </button>
+                                )}
+                            </div>
+                        </Fragment>
+                        :
+                        null
+                    }
                     </div>
                 </div>
                 :
