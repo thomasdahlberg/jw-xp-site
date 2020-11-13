@@ -44,11 +44,24 @@ class Window extends Component{
                     <div className={windowStyles.content}>
                         <aside className={windowStyles.caption}></aside>
                         {this.props.library?
-                            this.props.library.map(({ type, title, file, id}, idx)=>
-                            <button className={windowStyles.button} key={idx} form={id}><img key={idx} id={id}  src={images(`./${type}/${file}.jpg`)} alt={title}/></button>
-                        )
-                        :
-                        null
+                            <div>
+                                <div className={windowStyles.bigimg}>
+                                    <div className={windowStyles.imgcont}>
+                                        <img src={images(`./${this.props.library[0].type}/${this.props.library[0].file}.jpg`)} alt={this.props.library[0].title}/>
+                                    </div>
+                                    <div className={windowStyles.imgnav}>
+                                        <button>|&lsaquo;</button>
+                                        <button>&rsaquo;|</button>
+                                    </div>
+                                </div>
+                                <div className={windowStyles.gallery}>
+                                    {this.props.library.map(({ type, title, file, id}, idx)=>
+                                        <button className={windowStyles.button} key={idx} form={id}><img key={idx} id={id}  src={images(`./${type}/${file}.jpg`)} alt={title}/></button>
+                                    )}
+                                </div>
+                            </div>
+                            :
+                            null
                         }
                     </div>
                 </div>

@@ -1,103 +1,153 @@
 .container {
-    margin-top: 2rem;
-    width: 65vw;
-    height: 80vh;
-    background-color: white;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    border: solid #255fdc 4px;
-    box-shadow: 2px 2px 2px #00168f;
+  margin-top: 2rem;
+  width: 65vw;
+  height: 80vh;
+  background-color: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  border: solid #255fdc 4px;
+  box-shadow: 2px 2px 2px #00168f;
 }
 
 .title-bar {
-    background-image: linear-gradient(0deg,#0268fb, #0254e4 80%, #338fff);
-    color: white;
-    font-family: 'MS Sans-serif', sans-serif;
-    text-shadow: 2px 2px black;
-    padding-left: 1rem;
-    max-height: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-image: linear-gradient(0deg, #0268fb, #0254e4 80%, #338fff);
+  color: white;
+  font-family: "MS Sans-serif", sans-serif;
+  text-shadow: 2px 2px black;
+  padding-left: 1rem;
+  max-height: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .title-bar button {
-    background-color: #dc3509;
-    background-image: linear-gradient(135deg, #dda2b6, #dc3509);
-    border-radius: 6px;
-    border-style: solid;
-    border-color: white;
-    color: white;
-    font-weight: 900;
-    font-size: 1.25rem;
-    font-stretch: extra-expanded;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    width: 1.75rem;
-    height: 1.75rem;
-    // text-align: center;
-    text-decoration: none;
-    box-shadow: 2px 2px 2px #00168f;
+  background-color: #dc3509;
+  background-image: linear-gradient(135deg, #dda2b6, #dc3509);
+  border-radius: 6px;
+  border-style: solid;
+  border-color: white;
+  color: white;
+  font-weight: 900;
+  font-size: 1.25rem;
+  font-stretch: extra-expanded;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  width: 1.75rem;
+  height: 1.75rem;
+  // text-align: center;
+  text-decoration: none;
+  box-shadow: 2px 2px 2px #00168f;
 }
 
 .title-bar button:active {
-    background-image: none;
-    box-shadow: none;
-    background-color: #dc3509;
+  background-image: none;
+  box-shadow: none;
+  background-color: #dc3509;
 }
 
 .title-bar button:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .tool-bar {
-    padding-left: 0px;
-    height: 3rem;
-    background-color: #f0f0e4;
-    border-bottom: #d2d7d7 solid 2px;
+  padding-left: 0px;
+  height: 3rem;
+  background-color: #f0f0e4;
+  border-bottom: #d2d7d7 solid 2px;
 }
 
 .content {
-    position: relative;
-    padding-bottom: 7rem;
-    display: flex;
-    // width: 100%;
-    overflow-x: auto;
+  height: 100%;
+  position: relative;
+  padding-bottom: 7rem;
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
 }
 
-.content img {
-    height: 8vh;
-    margin: .5rem;
+.gallery img {
+  height: 8vh;
+  margin: 0.5rem;
 }
 
 .content img:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .caption {
-    width: 20vw;
-    background-color: #79a1e9;
-    background-image: linear-gradient(0deg, #6376d5, #79a1e9);
-    height: 70vh;
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 9%;
+  width: 20vw;
+  background-color: #79a1e9;
+  background-image: linear-gradient(0deg, #6376d5, #79a1e9);
+  height: 89%;
 }
 
 .menus {
-    display: flex;
-    list-style-type: none;
-    margin-top: .25rem;
-    padding-left: 1rem;
+  display: flex;
+  list-style-type: none;
+  margin-top: 0.25rem;
+  padding-left: 1rem;
 }
 
 .menus li {
-    margin-right: .5rem;
-    font-family: 'MS Sans-serif', sans-serif;
-    font-size: .9rem;
+  margin-right: 0.5rem;
+  font-family: "MS Sans-serif", sans-serif;
+  font-size: 0.9rem;
 }
 
 .button {
-    outline: none;
-    border: none;
-    background-color: #F9F8F8;
+  outline: none;
+  border: none;
+  background-color: #f9f8f8;
 }
 
+.gallery {
+  position: absolute;
+  bottom: 0;
+  left: 20vw;
+  display: flex;
+  // width: 100%;
+  overflow-x: auto;
+}
+
+.bigimg {
+  position: absolute;
+  top: 0;
+  left: 20vw;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 80%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bigimg img {
+  width: 90%;
+  //   height: 100%;
+}
+
+.imgcont {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.imgnav button {
+  border: none;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: #0254e4;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 900;
+  color: #f9f8f8;
+  box-shadow: 2px 2px 2px #00168f;
+  text-shadow: 2px 2px black;
+}
