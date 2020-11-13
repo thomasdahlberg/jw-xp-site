@@ -93,7 +93,7 @@ class Window extends Component{
                                     <button
                                         id="l"
                                         ref={this.leftButRef}
-                                        form={this.props.library[0].id - 1}
+                                        form={this.props.library[this.props.library.length - 1].id}
                                         onClick={this.handleImageSelect}
                                     >|&lsaquo;
                                     </button>
