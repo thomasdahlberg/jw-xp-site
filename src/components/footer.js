@@ -14,9 +14,13 @@ class Footer extends Component {
     let h = today.getHours();
     let m = today.getMinutes();
     m = this.checkTime(m);
-    node.innerText = `${h}:${m}`;
-    let t = setTimeout(this.startTime, 500);
+    let time = `${h}:${m}`;
+    if(node != null) {
+      node.innerText = `${time}`;
+      let t = setTimeout(this.startTime, 500);
+    }
   }
+
 
   checkTime = (i) => {
     if (i < 10) i = '0' + i;

@@ -11,6 +11,10 @@
   box-shadow: 2px 2px 2px #00168f;
 }
 
+.container button:hover {
+  cursor: pointer;
+}
+
 .title-bar {
   background-image: linear-gradient(0deg, #0268fb, #0254e4 80%, #338fff);
   color: white;
