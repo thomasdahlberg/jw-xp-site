@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './header';
 import Footer from './footer';
 import styles from '../components/styles/layout.module.scss';
 
@@ -12,13 +11,11 @@ const boundingBox = {
     height: "100%",
     width: "100%",
     position: "relative",
-    backgroundPosition: "center",
 }
 
 const Layout = (props) => {
     return(
         <div className={styles.container} style={boundingBox}>
-            <Header />
             <div>
                 {props.children}
             </div>
