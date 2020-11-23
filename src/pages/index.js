@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles/index.scss"
 import Landing from "../components/landing";
+import Head from "../components/head";
 
 class Index extends Component {
   constructor(props) {
@@ -11,7 +12,10 @@ class Index extends Component {
   }
   render() {
     return (
-        <Landing />
+        <div>
+          <Head title="Welcome" />
+          <Landing />
+        </div>
       )
   }
 }

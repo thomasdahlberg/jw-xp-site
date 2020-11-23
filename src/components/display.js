@@ -43,7 +43,6 @@ const Display = (props) =>  {
             <div className={displayStyles.children}>
                 {props.children}
             </div>
-            <img className={displayStyles.desktop} src="./images/bliss.jpg" alt="bliss XP"/>
         </div>
     )
 }

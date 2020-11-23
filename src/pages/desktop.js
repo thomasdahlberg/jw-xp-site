@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Layout from "../components/layout";
+import Head from "../components/head";
 import Display from "../components/display";
 import Window from "../components/window";
 import Start from "../components/start";
@@ -67,6 +68,7 @@ class Desktop extends Component {
           hideRecycle = {this.state["hideRecycle Bin"]}
           handleHideWindow = {this.handleHideWindow}
         >
+          <Head title="Browser"/>
             <Display
               handleClickWindow = {this.handleClickWindow}
             >
