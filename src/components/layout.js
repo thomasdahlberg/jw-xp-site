@@ -6,9 +6,9 @@ import styles from '../components/styles/layout.module.scss';
 const boundingBox = {
     border: "solid red 2px",
     backgroundImage: "url('./images/bliss.jpg')",
-    // backgroundSize: "cover",
-    // backgroundPosition: "center",
-    // backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
     height: "100%",
     width: "100%",
     position: "relative",

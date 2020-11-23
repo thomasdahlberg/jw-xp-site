@@ -5,6 +5,7 @@ const images = require.context("../../public/images", true);
 
 class Window extends Component{
 
+    containerRef = React.createRef();
     imageRef = React.createRef();
     capTitleRef = React.createRef();
     capYearRef = React.createRef();
@@ -12,6 +13,15 @@ class Window extends Component{
     capDimRef = React.createRef();
     leftButRef = React.createRef();
     rightButRef = React.createRef();
+
+    handleMaximizeWindow = (e) => {
+        const windowNode = this.containerRef.current;
+        windowNode.style.width = '100vw';
+        windowNode.style.height = '100vh';
+        windowNode.style.position = 'fixed';
+        windowNode.style.left = 0;
+        windowNode.style.top = 0;
+    }
 
     handleImageSelect = (e) => {
         console.log(e.target.attributes[1].nodeValue);
@@ -56,13 +66,13 @@ class Window extends Component{
                 handle=".handle"
             >
             {this.props.active && !this.props.hidden ? 
-                <div className={windowStyles.container} style={posStyle}>
+                <div ref={this.containerRef} className={windowStyles.container} style={posStyle}>
                     <div className="handle">
                         <div className={windowStyles.titleBar}>
                             <p>{this.props.name}</p>
                             <div className={windowStyles.titlebtns}>
                                 <button id={this.props.name} onClick={this.props.handleHideWindow}><i id={this.props.name} onClick={this.props.handleHideWindow} className={"fa fa-window-minimize"} aria-hidden="true"></i></button>    
-                                <button id={this.props.name} onClick={this.props.handleCloseWindow}><i id={this.props.name} className={"fa fa-window-maximize"} aria-hidden="true"></i></button>    
+                                <button id={this.props.name} onClick={this.handleMaximizeWindow}><i id={this.props.name} className={"fa fa-window-maximize"} aria-hidden="true"></i></button>    
                                 <button id={this.props.name} className={windowStyles.close} onClick={this.props.handleCloseWindow}>X</button>    
                             </div>
                         </div>
