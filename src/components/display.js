@@ -1,5 +1,5 @@
 import React from 'react';
-import displayStyles from './styles/display.module.scss';
+import displayStyles from '../styles/display.module.scss';
 import Draggable from 'react-draggable';
 
 const Display = (props) =>  {

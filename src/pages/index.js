@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./styles/index.scss"
+import "../styles/index.scss";
 import Landing from "../components/landing";
 import Head from "../components/head";
 

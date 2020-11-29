@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "gatsby";
-import startStyles from './styles/start.module.scss'
+import startStyles from '../styles/start.module.scss'
 
 
 const Start = (props) => {

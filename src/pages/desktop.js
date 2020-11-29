@@ -4,7 +4,7 @@ import Head from "../components/head";
 import Display from "../components/display";
 import Window from "../components/window";
 import Start from "../components/start";
-import "./styles/index.scss"
+import "../styles/index.scss";
 
 let workContent = require('../components/workContent');
 

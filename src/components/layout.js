@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './footer';
-import styles from '../components/styles/layout.module.scss';
+import styles from '../styles/layout.module.scss';
 
 const boundingBox = {
     border: "solid red 2px",

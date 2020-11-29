@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import windowStyles from "./styles/window.module.scss";
+import windowStyles from "../styles/window.module.scss";
 import Draggable from 'react-draggable';
 const images = require.context("../../public/images", true);
 

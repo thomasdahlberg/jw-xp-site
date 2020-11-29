@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "gatsby"
-import landingStyles from './styles/landing.module.scss';
+import landingStyles from '../styles/landing.module.scss';
 
-const Landing = (props) => {
+const Landing = () => {
     return (
         <div className = {landingStyles.container}>
             <div className= {landingStyles.trim}></div>
