@@ -1,0 +1,49 @@
+.bigimg {
+  position: fixed;
+  top: 5rem;
+  left: 20vw;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 80%;
+  align-items: center;
+}
+
+.bigimg img {
+  max-width: 90%;
+  object-fit: contain;
+  max-height: 90%;
+}
+
+.imgcont {
+  margin: 1rem;
+  display: flex;
+  height: 80%;
+  width: 100%;
+  justify-content: center;
+}
+
+.imgnav button {
+  outline: none;
+  border: none;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: #0254e4;
+  font-size: 1rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 900;
+  color: #f9f8f8;
+  box-shadow: 2px 2px 2px #00168f;
+  text-shadow: 2px 2px black;
+}
+
+.imgnav button:active {
+  background-color: #338fff;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.imgnav {
+  position: relative;
+  top: 0;
+}

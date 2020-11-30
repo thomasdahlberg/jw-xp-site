@@ -2,10 +2,6 @@ import React, { Component } from "react"
 import footerStyles from "../styles/footer.module.scss";
 
 class Footer extends Component {
-  constructor(props) {
-    super(props)
-    this.state = { footer: true }
-  }
   clockRef = React.createRef();
 
   startTime = () => {
@@ -21,7 +17,6 @@ class Footer extends Component {
       return t;
     }
   }
-
 
   checkTime = (i) => {
     if (i < 10) i = '0' + i;

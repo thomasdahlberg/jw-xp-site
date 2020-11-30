@@ -1,0 +1,26 @@
+.gallery {
+  position: absolute;
+  bottom: 0;
+  left: 20vw;
+  display: flex;
+  overflow-x: auto;
+}
+
+.gallery button:hover {
+  background-color: #338fff;
+}
+
+.gallery button:active {
+  background-color: #0254e4;
+}
+
+.gallery img {
+  height: 8vh;
+  margin: 0.5rem;
+}
+
+.button {
+  outline: none;
+  border: none;
+  background-color: #f9f8f8;
+}
