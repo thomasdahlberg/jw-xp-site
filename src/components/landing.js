@@ -9,6 +9,7 @@ const Landing = () => {
             <div className= {styles.content}>
                 <div className={styles.blockA}>
                     <div className={styles.logoContainer}>
+                        <img src="#" alt="site-logo"/>
                         <h1 className={styles.macroHard}>Macrohard</h1>
                         <h1 className={styles.screenDoors}>Screendoors</h1>
                     </div>
