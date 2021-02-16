@@ -5,7 +5,7 @@ import styles from '../styles/landing.module.scss';
 const Landing = () => {
     return (
         <div className = {styles.container}>
-            <div className= {styles.trim}></div>
+            <div className= {styles.trin}></div>
             <div className= {styles.content}>
                 <div className={styles.blockA}>
                     <div className={styles.logoContainer}>
