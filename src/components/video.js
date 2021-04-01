@@ -4,7 +4,7 @@ import styles from "../styles/window.module.scss";
 import Draggable from 'react-draggable';
 import Content from './content';
 
-class Window extends Component{
+class Video extends Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -108,7 +108,7 @@ class Window extends Component{
                         query={
                             graphql`
                                 query {
-                                    allArtwork(filter: {type: {eq: "collage"}}) {
+                                    allArtwork(filter: {type: {eq: "video"}}) {
                                         edges {
                                             node {
                                                 title
@@ -136,4 +136,4 @@ class Window extends Component{
     }
 }
 
-export default Window;
+export default Video;

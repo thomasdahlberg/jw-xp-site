@@ -4,7 +4,7 @@ import styles from "../styles/window.module.scss";
 import Draggable from 'react-draggable';
 import Content from './content';
 
-class Window extends Component{
+class Photography extends Component{
     constructor(props) {
         super(props)
         this.state = {
@@ -25,13 +25,13 @@ class Window extends Component{
                     "100px" : 
                     this.props.name === "Videos" ?
                         "120px" :
-                        this.props.name === "Sculpture" ?
+                        this.props.name === "Photography" ?
                         "140px" : "160px",
             top: this.props.name === "Painting" ?
                     "30px" : 
                     this.props.name === "Videos" ?
                         "50px" :
-                        this.props.name === "Sculpture" ?
+                        this.props.name === "Photography" ?
                         "70px" : "90px",
         }
         const maxStyle = {
@@ -108,7 +108,7 @@ class Window extends Component{
                         query={
                             graphql`
                                 query {
-                                    allArtwork(filter: {type: {eq: "collage"}}) {
+                                    allArtwork(filter: {type: {eq: "photo"}}) {
                                         edges {
                                             node {
                                                 title
@@ -136,4 +136,4 @@ class Window extends Component{
     }
 }
 
-export default Window;
+export default Photography;
