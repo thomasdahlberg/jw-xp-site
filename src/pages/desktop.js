@@ -5,6 +5,9 @@ import Display from "../components/display";
 import Window from "../components/window";
 import Start from "../components/start";
 import "../styles/index.scss";
+import Painting from "../components/painting";
+import Video from "../components/video";
+import Photography from "../components/photography";
 
 class Desktop extends Component {
   constructor(props) {
@@ -72,7 +75,7 @@ class Desktop extends Component {
                 <Start
                   active = {this.state.hideStart}
                 />
-                <Window 
+                <Painting 
                   active = {this.state.Painting}
                   hidden = {this.state.hidePainting}
                   name = {"Painting"}
@@ -80,17 +83,17 @@ class Desktop extends Component {
                   handleCloseWindow = {this.handleCloseWindow}
                   handleHideWindow = {this.handleHideWindow}
                 />
-                <Window
+                <Video
                   active = {this.state.Videos}
                   hidden = {this.state.hideVideos}
                   name = {"Videos"}
                   handleCloseWindow = {this.handleCloseWindow}
                   handleHideWindow = {this.handleHideWindow}
                 />
-                <Window
+                <Photography
                   active = {this.state.Sculpture}
                   hidden = {this.state.hideSculpture}
-                  name = {"Sculpture"}
+                  name = {"Photo"}
                   handleCloseWindow = {this.handleCloseWindow}
                   handleHideWindow = {this.handleHideWindow}
                 />
