@@ -11,7 +11,7 @@ const Gallery = (props) => {
                     className={styles.button}
                     key={idx}
                     form={idx}
-                    onClick={this.handleImageSelect}
+                    onClick={props.handleImageSelect}
                 >
                     <img
                         key={idx}

@@ -60,6 +60,7 @@ class Content extends Component {
     
     componentDidMount(){
         document.addEventListener("keydown", this.handleKeyDown);
+        console.log(this.props.library);
     }
 
     componentWillUnmount(){
@@ -71,23 +72,23 @@ class Content extends Component {
             <div className={styles.content}>
                 <Caption 
                     library={this.props.library}
-                    landingWork={this.props.landingWork}
-                    imageIdx={this.state.imageIdx}
+                    landingWork={this.props.library[0]}
+                    imageIdx={0}
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
                 />
                 <BigImage 
                     library={this.props.library}
-                    landingWork={this.props.landingWork}
-                    imageIdx={this.state.imageIdx}
+                    landingWork={this.props.library[0]}
+                    imageIdx={0}
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
                 />
-                <Gallery
+                {/* <Gallery
                     library={this.props.library}
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
-                />
+                /> */}
             </div>
         )
     }
