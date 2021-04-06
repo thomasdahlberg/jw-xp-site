@@ -104,11 +104,11 @@ class Window extends Component{
                             <li>View</li>
                         </ul>
                     </div>
-                    <StaticQuery
+                    {/* <StaticQuery
                         query={
                             graphql`
                                 query {
-                                    allArtwork(filter: {type: {eq: "collage"}}) {
+                                    Artwork(filter: {type: {eq: "collage"}}) {
                                         edges {
                                             node {
                                                 title
@@ -126,7 +126,7 @@ class Window extends Component{
                         render={ data => 
                             <Content library={data.allArtwork.edges} /> 
                         }
-                    />
+                    /> */}
                 </div>
                 :
                 <div></div>

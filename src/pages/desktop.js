@@ -75,7 +75,7 @@ class Desktop extends Component {
                 <Start
                   active = {this.state.hideStart}
                 />
-                <Painting 
+                {/* <Painting 
                   active = {this.state.Painting}
                   hidden = {this.state.hidePainting}
                   name = {"Painting"}
@@ -103,7 +103,7 @@ class Desktop extends Component {
                   name = {"Recycle Bin"}
                   handleCloseWindow = {this.handleCloseWindow}
                   handleHideWindow = {this.handleHideWindow}
-                />
+                /> */}
             </Display>
         </Layout>
       )

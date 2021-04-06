@@ -23,13 +23,13 @@ class Photography extends Component{
             position: "fixed",
             left: this.props.name === "Painting" ?
                     "100px" : 
-                    this.props.name === "Videos" ?
+                    this.props.name === "Video" ?
                         "120px" :
                         this.props.name === "Photography" ?
                         "140px" : "160px",
             top: this.props.name === "Painting" ?
                     "30px" : 
-                    this.props.name === "Videos" ?
+                    this.props.name === "Video" ?
                         "50px" :
                         this.props.name === "Photography" ?
                         "70px" : "90px",
@@ -104,11 +104,11 @@ class Photography extends Component{
                             <li>View</li>
                         </ul>
                     </div>
-                    <StaticQuery
+                    {/* <StaticQuery
                         query={
                             graphql`
                                 query {
-                                    allArtwork(filter: {type: {eq: "photo"}}) {
+                                    Artwork(filter: {type: {eq: "Photography"}}) {
                                         edges {
                                             node {
                                                 title
@@ -126,7 +126,7 @@ class Photography extends Component{
                         render={ data => 
                             <Content library={data.allArtwork.edges} /> 
                         }
-                    />
+                    /> */}
                 </div>
                 :
                 <div></div>

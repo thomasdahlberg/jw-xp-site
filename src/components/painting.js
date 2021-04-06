@@ -104,11 +104,11 @@ class Painting extends Component{
                             <li>View</li>
                         </ul>
                     </div>
-                    <StaticQuery
+                    {/* <StaticQuery
                         query={
                             graphql`
                                 query {
-                                    allArtwork(filter: {type: {eq: "painting"}}) {
+                                    Artwork(filter: {type: {eq: "Painting"}}) {
                                         edges {
                                             node {
                                                 title
@@ -126,7 +126,7 @@ class Painting extends Component{
                         render={ data => 
                             <Content library={data.allArtwork.edges} /> 
                         }
-                    />
+                    /> */}
                 </div>
                 :
                 <div></div>

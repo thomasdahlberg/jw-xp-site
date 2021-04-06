@@ -104,11 +104,11 @@ class Video extends Component{
                             <li>View</li>
                         </ul>
                     </div>
-                    <StaticQuery
+                    {/* <StaticQuery
                         query={
                             graphql`
                                 query {
-                                    allArtwork(filter: {type: {eq: "video"}}) {
+                                    Artwork(filter: {type: {eq: "Video"}}) {
                                         edges {
                                             node {
                                                 title
@@ -126,7 +126,7 @@ class Video extends Component{
                         render={ data => 
                             <Content library={data.allArtwork.edges} /> 
                         }
-                    />
+                    /> */}
                 </div>
                 :
                 <div></div>

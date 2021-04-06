@@ -16,7 +16,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-sql',
       options: {
-        typeName: "Artwork",
+        typeName: "ARTWORK",
         fieldName: "sqlite",
         dbEngine: {
           client: 'sqlite3',
@@ -26,7 +26,7 @@ module.exports = {
           useNullAsDefault: true
         },
         queryChain: function(query) {
-          return query.select("title", "file", "year", "materials", "dimensions", "type").from("artwork")
+          return query.select("TITLE", "FILENAME", "YEAR", "MATERIALS", "DIMENSIONS", "TYPE").from("ARTWORK")
         }
       }
     },
