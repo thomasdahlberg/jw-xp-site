@@ -72,14 +72,14 @@ class Content extends Component {
             <div className={styles.content}>
                 <Caption 
                     library={this.props.library}
-                    landingWork={this.props.library[0]}
+                    landingWork={this.props.library[this.state.imageIdx]}
                     imageIdx={0}
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
                 />
                 <BigImage 
                     library={this.props.library}
-                    landingWork={this.props.library[0]}
+                    landingWork={this.props.library[this.state.imageIdx]}
                     imageIdx={0}
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
