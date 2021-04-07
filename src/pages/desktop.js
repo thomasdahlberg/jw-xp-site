@@ -1,13 +1,12 @@
 import React, { Component } from "react";
+
 import Layout from "../components/layout";
 import Head from "../components/head";
 import Display from "../components/display";
-import Window from "../components/window";
+import Windows from "../components/windows";
 import Start from "../components/start";
+
 import "../styles/index.scss";
-import Painting from "../components/painting";
-import Video from "../components/video";
-import Photography from "../components/photography";
 
 class Desktop extends Component {
   constructor(props) {
@@ -15,11 +14,11 @@ class Desktop extends Component {
     this.state = {
       Painting: false,
       Videos: false,
-      Sculpture: false,
+      Photography: false,
       "Recycle Bin": false,
       hidePainting: false,
       hideVideos: false,
-      hideSculpture: false,
+      hidePhotography: false,
       "hideRecycle Bin": false,
       hideStart: false,
     }
@@ -59,11 +58,11 @@ class Desktop extends Component {
         <Layout
           start = {this.state.hideStart}
           painting = {this.state.Painting}
-          sculpture = {this.state.Sculpture}
+          Photography = {this.state.Photography}
           videos = {this.state.Videos}
           recycle = {this.state["Recycle Bin"]}
           hidePainting = {this.state.hidePainting}
-          hideSculpture = {this.state.hideSculpture}
+          hideSculpture = {this.state.hidePhotography}
           hideVideos = {this.state.hideVideos}
           hideRecycle = {this.state["hideRecycle Bin"]}
           handleHideWindow = {this.handleHideWindow}
@@ -75,35 +74,18 @@ class Desktop extends Component {
                 <Start
                   active = {this.state.hideStart}
                 />
-                {/* <Painting 
-                  active = {this.state.Painting}
-                  hidden = {this.state.hidePainting}
-                  name = {"Painting"}
-                  library = {this.state.paintLib}
+                <Windows 
+                  painting = {this.state.Painting}
+                  photography = {this.state.Photography}
+                  videos = {this.state.Videos}
+                  recycle = {this.state["Recycle Bin"]}
+                  hidePainting = {this.state.hidePainting}
+                  hidePhotography = {this.state.hidePhotography}
+                  hideVideos = {this.state.hideVideos}
+                  hideRecycle = {this.state["hideRecycle Bin"]}
                   handleCloseWindow = {this.handleCloseWindow}
                   handleHideWindow = {this.handleHideWindow}
                 />
-                <Video
-                  active = {this.state.Videos}
-                  hidden = {this.state.hideVideos}
-                  name = {"Videos"}
-                  handleCloseWindow = {this.handleCloseWindow}
-                  handleHideWindow = {this.handleHideWindow}
-                />
-                <Photography
-                  active = {this.state.Sculpture}
-                  hidden = {this.state.hideSculpture}
-                  name = {"Photo"}
-                  handleCloseWindow = {this.handleCloseWindow}
-                  handleHideWindow = {this.handleHideWindow}
-                />
-                <Window
-                  active = {this.state["Recycle Bin"]}
-                  hidden = {this.state["hideRecycle Bin"]}
-                  name = {"Recycle Bin"}
-                  handleCloseWindow = {this.handleCloseWindow}
-                  handleHideWindow = {this.handleHideWindow}
-                /> */}
             </Display>
         </Layout>
       )

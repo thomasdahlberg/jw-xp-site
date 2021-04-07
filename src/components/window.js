@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
 import styles from "../styles/window.module.scss";
 import Draggable from 'react-draggable';
 import Content from './content';
@@ -25,13 +24,13 @@ class Window extends Component{
                     "100px" : 
                     this.props.name === "Videos" ?
                         "120px" :
-                        this.props.name === "Sculpture" ?
+                        this.props.name === "Photo" ?
                         "140px" : "160px",
             top: this.props.name === "Painting" ?
                     "30px" : 
                     this.props.name === "Videos" ?
                         "50px" :
-                        this.props.name === "Sculpture" ?
+                        this.props.name === "Photo" ?
                         "70px" : "90px",
         }
         const maxStyle = {
@@ -104,29 +103,7 @@ class Window extends Component{
                             <li>View</li>
                         </ul>
                     </div>
-                    {/* <StaticQuery
-                        query={
-                            graphql`
-                                query {
-                                    Artwork(filter: {type: {eq: "collage"}}) {
-                                        edges {
-                                            node {
-                                                title
-                                                file
-                                                year
-                                                materials
-                                                dimensions
-                                                type
-                                            }
-                                        }
-                                    }
-                                }
-                            `
-                        }
-                        render={ data => 
-                            <Content library={data.allArtwork.edges} /> 
-                        }
-                    /> */}
+                    <Content library={this.props.library} /> 
                 </div>
                 :
                 <div></div>

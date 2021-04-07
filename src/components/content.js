@@ -84,11 +84,11 @@ class Content extends Component {
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
                 />
-                {/* <Gallery
+                <Gallery
                     library={this.props.library}
                     handleImageSelect={this.handleImageSelect}
                     handleKeyDown={this.handleKeyDown}
-                /> */}
+                />
             </div>
         )
     }
