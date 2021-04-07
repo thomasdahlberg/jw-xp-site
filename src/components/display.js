@@ -40,17 +40,17 @@ const Display = (props) =>  {
                 </Draggable>
                 <Draggable axis="both">
                     <button 
-                        id="Sculpture" 
+                        id="Photography" 
                         className={styles.icon} 
                         onDoubleClick={props.handleClickWindow}
                     >
                         <img 
-                            id="Sculpture" 
+                            id="Photography" 
                             className={styles.folder} 
                             src={folderIconURI}
                             alt="folder-icon"
                         />
-                        <p id="Sculpture">Sculpture</p>
+                        <p id="Photography">Photography</p>
                     </button>
                 </Draggable>
                 <Draggable axis="both">
