@@ -3,7 +3,6 @@ import Footer from './footer';
 import styles from '../styles/layout.module.scss';
 
 const boundingBox = {
-    border: "solid red 2px",
     backgroundImage: "url('./images/bliss.jpg')",
     backgroundSize: "cover",
     backgroundPosition: "center",
