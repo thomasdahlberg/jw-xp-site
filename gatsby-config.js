@@ -31,4 +31,5 @@ module.exports = {
       }
     },
   ],
+  pathPrefix: "/jw-xp-site",
 }
