@@ -16,11 +16,15 @@
 }
 
 .imgcont {
+  box-sizing: border-box;
+  appearance: none;
+  outline: none;
+  border: 0;
   margin: 1rem;
   display: flex;
   height: 80%;
-  width: 100%;
   justify-content: center;
+  background-color: #fff;
 }
 
 .imgnav button {

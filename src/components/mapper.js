@@ -45,7 +45,7 @@ const Mapper = (props) => {
       <Window
         active = {props.photography}
         hidden = {props.hidePhotography}
-        name = {"Photo"}
+        name = {"Photography"}
         library = {photography}
         handleCloseWindow = {props.handleCloseWindow}
         handleHideWindow = {props.handleHideWindow}

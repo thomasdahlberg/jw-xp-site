@@ -3,8 +3,8 @@
   z-index: 10;
   display: flex;
   flex-direction: column;
-  height: 50vh;
-  width: 35vw;
+  height: 60vh;
+  width: 45vw;
   background-color: white;
   position: fixed;
   left: 0;
@@ -124,8 +124,39 @@
   width: 50%;
 }
 
+.cv {
+  width: auto;
+  height: 30px;
+  padding-left: 0.1rem;
+  margin-right: 0.75rem;
+}
+
+.music {
+  width: auto;
+  height: 42px;
+  margin-right: 0.5rem;
+}
+
+.blue a {
+  padding: 0.5rem;
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  font-weight: 900;
+  color: #00168f;
+}
+
+.blue a:hover {
+  background-color: #255fdc;
+}
+
 .white {
   background-color: white;
   height: 100%;
   width: 50%;
+}
+
+.white p {
+  padding: 0.25rem 0.5rem;
+  line-height: 125%;
 }

@@ -1,10 +1,9 @@
 .content {
   height: 100%;
   position: relative;
-  padding-bottom: 7rem;
   display: flex;
-  width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .content img:hover {
