@@ -21,12 +21,12 @@ const Layout = (props) => {
             <Footer
                 start = {props.start}
                 painting = {props.painting}
-                sculpture = {props.sculpture}
+                photography = {props.photography}
                 videos = {props.videos}
                 recycle = {props.recycle}
                 hidePainting = {props.hidePainting}
                 hideVideos = {props.hideVideos}
-                hideSculpture = {props.hideSculpture}
+                hidePhotography = {props.hidePhotography}
                 hideRecycle = {props.hideRecycle}
                 handleHideWindow = {props.handleHideWindow}
             />

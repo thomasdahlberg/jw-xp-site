@@ -33,6 +33,7 @@ const Mapper = (props) => {
         library = {painting}
         handleCloseWindow = {props.handleCloseWindow}
         handleHideWindow = {props.handleHideWindow}
+        topWindow = {props.topWindow === "Painting" ? true : false}
       />
       <Window
         active = {props.videos}
@@ -41,6 +42,7 @@ const Mapper = (props) => {
         library = {video}
         handleCloseWindow = {props.handleCloseWindow}
         handleHideWindow = {props.handleHideWindow}
+        topWindow = {props.topWindow === "Videos" ? true : false}
       />
       <Window
         active = {props.photography}
@@ -49,6 +51,7 @@ const Mapper = (props) => {
         library = {photography}
         handleCloseWindow = {props.handleCloseWindow}
         handleHideWindow = {props.handleHideWindow}
+        topWindow = {props.topWindow === "Photography" ? true : false}
       />
       <Window
         active = {props.recycle}
@@ -57,6 +60,7 @@ const Mapper = (props) => {
         library = {recycleBin}
         handleCloseWindow = {props.handleCloseWindow}
         handleHideWindow = {props.handleHideWindow}
+        topWindow = {props.topWindow === "Recycle Bin" ? true : false}
       />
     </Fragment>
   )

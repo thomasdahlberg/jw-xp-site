@@ -12,7 +12,7 @@ const Display = (props) =>  {
                     <button 
                         id="Painting"
                         className={styles.icon} 
-                        onDoubleClick={props.handleClickWindow}
+                        onClick={props.handleClickWindow}
                     >
                         <img 
                             id="Painting" 
@@ -27,7 +27,7 @@ const Display = (props) =>  {
                     <button 
                         id="Videos" 
                         className={styles.icon}
-                        onDoubleClick={props.handleClickWindow}
+                        onClick={props.handleClickWindow}
                     >
                         <img 
                             id="Videos" 
@@ -42,7 +42,7 @@ const Display = (props) =>  {
                     <button 
                         id="Photography" 
                         className={styles.icon} 
-                        onDoubleClick={props.handleClickWindow}
+                        onClick={props.handleClickWindow}
                     >
                         <img 
                             id="Photography" 
@@ -57,7 +57,7 @@ const Display = (props) =>  {
                     <button 
                         id="Recycle Bin" 
                         className={styles.icon}
-                        onDoubleClick={props.handleClickWindow}
+                        onClick={props.handleClickWindow}
                     >
                         <img 
                             id="Recycle Bin" 

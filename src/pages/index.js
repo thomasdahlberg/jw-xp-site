@@ -21,15 +21,29 @@ class Desktop extends Component {
       hidePhotography: false,
       "hideRecycle Bin": false,
       hideStart: false,
+      topWindow: null,
     }
   }
 
   handleClickWindow = (e) => {
     e.preventDefault();
     this.setState({
-      [e.target.id]: true,
-      [`hide${e.target.id}`]: false
-    })
+      [e.currentTarget.id]: true,
+      [`hide${e.currentTarget.id}`]: false,
+      topWindow: e.currentTarget.id
+    });
+    this.handleCloseOtherWindows(e.target.id);
+  }
+
+  handleCloseOtherWindows = (activeWindow) => {
+    let allWindows = ['Painting', 'Videos', 'Photography', 'Recycling Bin'];
+    for (const singleWindow of allWindows) {
+      if (singleWindow !== activeWindow) {
+        this.setState({
+          [singleWindow]: false
+        });
+      }
+    }
   }
 
   handleCloseWindow = (e) => {
@@ -41,7 +55,6 @@ class Desktop extends Component {
 
   handleHideWindow = (e) => {
     e.preventDefault();
-    console.log(e.target.id);
     if(this.state[`hide${e.target.id}`]){
       this.setState({
         [`hide${e.target.id}`]: false
@@ -58,11 +71,11 @@ class Desktop extends Component {
         <Layout
           start = {this.state.hideStart}
           painting = {this.state.Painting}
-          Photography = {this.state.Photography}
+          photography = {this.state.Photography}
           videos = {this.state.Videos}
           recycle = {this.state["Recycle Bin"]}
           hidePainting = {this.state.hidePainting}
-          hideSculpture = {this.state.hidePhotography}
+          hidePhotography = {this.state.hidePhotography}
           hideVideos = {this.state.hideVideos}
           hideRecycle = {this.state["hideRecycle Bin"]}
           handleHideWindow = {this.handleHideWindow}
@@ -83,8 +96,10 @@ class Desktop extends Component {
                   hidePhotography = {this.state.hidePhotography}
                   hideVideos = {this.state.hideVideos}
                   hideRecycle = {this.state["hideRecycle Bin"]}
+                  handleClickWindow = {this.handleClickWindow}
                   handleCloseWindow = {this.handleCloseWindow}
                   handleHideWindow = {this.handleHideWindow}
+                  topWindow = {this.state.topWindow}
                 />
             </Display>
         </Layout>

@@ -1,9 +1,58 @@
-import React from 'react';
-import { Link } from "gatsby";
+import React, {useState, useEffect} from 'react';
 import styles from '../styles/start.module.scss';
 
+const START_SECTIONS = ['bio', 'cv', 'statement', 'music'];
 
 const Start = (props) => {
+    const [activeSection, setActiveSection] = useState('bio');
+
+    const handleClick = (event) => {
+        setActiveSection(event.currentTarget.id);
+    }
+
+    const displayInfo = () => {
+        if(activeSection === 'bio') {
+            return <p>James Williams II is a curator and interdisciplinary artist whose work encompasses painting, sculpture and photography. His works center on topics of social and cultural identity in the United States tied together by self-portraiture and narration. His most recent project was curating the show, Whatchamacallit. The exhibition, accompanied with a publication, focused on superimposed identities and the growing obsession over them. Williams is the recipient of the MFA Joan Mitchell Foundation award, the Bromo Seltzer Fellowship, and served as artist-in-residence at School 33 in Baltimore, Maryland. Williams, originally from Upstate New York, received his master’s degree from the Mount Royal School of Art at Maryland Institute College Art (MICA). He currently teaches at MICA.</p>;
+        }
+
+        if(activeSection === 'statement') {
+            return (
+                <p>My work uses satire and visual riposte to challenge the ambiguity of the black construct as both an
+                object and abject. What started as an inquiry about the discursive formation of the black race by my
+                then five-year-old daughter followed my investigation into the subject within American society both
+                past and present. The black construct is complicated, fluid, and unreliable with anthropomorphic
+                qualities. The “truth” of race and complexities is intrinsic to our lives yet as my daughter reminds me
+                daily it's not as complex as we make it. The use of various photographic, technology, and fiber materials
+                blended within the painting is an attempt to find a childlike understanding of the inaccuracies and
+                indecisiveness of racial classifications of Black Americans and the achromatic color they both share.
+                </p>
+            );
+        }
+
+        if(activeSection === 'cv') {
+            return <p>CV Section</p>
+        }
+
+        return <p>My Music iframe</p>
+    }
+
+    const displaySection = displayInfo();
+
+    useEffect(() => {
+        try {
+            for(const section of START_SECTIONS) {
+                if(activeSection === section) {
+                    document.getElementById(activeSection).style.backgroundColor = "#00168f";
+                    document.getElementById(activeSection).style.color = "white";
+                } else {
+                    document.getElementById(section).style.backgroundColor = "unset";
+                    document.getElementById(section).style.color = "#00168f";
+                }
+            }            
+        } catch (error) {
+            console.log(error);
+        }
+    });
     return(
         <div>
             {props.active ? 
@@ -14,20 +63,32 @@ const Start = (props) => {
                     </div>
                     <div className={styles.content}>
                         <section className={styles.white}>
-                            <p>James Williams II is a curator and interdisciplinary artist whose work encompasses painting, sculpture and photography. His works center on topics of social and cultural identity in the United States tied together by self-portraiture and narration. His most recent project was curating the show, Whatchamacallit. The exhibition, accompanied with a publication, focused on superimposed identities and the growing obsession over them. Williams is the recipient of the MFA Joan Mitchell Foundation award, the Bromo Seltzer Fellowship, and served as artist-in-residence at School 33 in Baltimore, Maryland. Williams, originally from Upstate New York, received his master’s degree from the Mount Royal School of Art at Maryland Institute College Art (MICA). He currently teaches at MICA.</p>
+                            {displaySection}
                         </section>
                         <section className={styles.blue}>
-                            <a 
-                                href="./resume/Dahlberg_Resume.pdf" 
-                                target="_blank" 
-                                rel="noopener noreferrer">
+                            <button id="bio" onClick={handleClick}>
+                                <img className={styles.cv} src="./images/cv_icon.png" alt="bio link"/>
+                                <p>My Bio</p>
+                            </button>
+                            <button id="statement" onClick={handleClick}>
+                                <img className={styles.cv} src="./images/cv_icon.png" alt="statement link"/>
+                                <p>My Statement</p>
+                            </button>
+                            <button id="cv" onClick={handleClick}
+                                // href="./resume/Dahlberg_Resume.pdf" 
+                                // target="_blank" 
+                                // rel="noopener noreferrer"
+                            >
                                 <img className={styles.cv} src="./images/cv_icon.png" alt="cv link"/>
-                                <p>CV</p>
-                            </a>
-                            <a href="https://open.spotify.com/playlist/6farw4JbL8WaKGQ9QOoGVv?si=403d02c909144cdc">
+                                <p>My CV</p>
+                            </button>
+                            <button 
+                                id="music" onClick={handleClick}
+                                // href="https://open.spotify.com/playlist/6farw4JbL8WaKGQ9QOoGVv?si=403d02c909144cdc"
+                            >
                                 <img className={styles.music} src="./images/music_icon.png" alt="music link"/>
                                 <p>My Music</p>
-                            </a>
+                            </button>
                         </section>
                     </div>
                     <div className={styles.footer}>

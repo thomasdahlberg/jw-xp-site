@@ -1,9 +1,9 @@
 .gallery {
   position: absolute;
   bottom: 0;
-  // left: 20vw;
   display: flex;
   overflow-x: auto;
+  z-index: 10;
 }
 
 .gallery button:hover {

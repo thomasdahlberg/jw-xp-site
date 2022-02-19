@@ -1,6 +1,6 @@
 .container {
   font-family: "MS Sans-serif", sans-serif;
-  z-index: 10;
+  z-index: 15;
   display: flex;
   flex-direction: column;
   height: 60vh;
@@ -51,7 +51,7 @@
   justify-content: flex-end;
 }
 
-.footer a {
+.footer button {
   text-decoration: none;
   color: white;
   padding: 0.5rem;
@@ -72,7 +72,7 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-.footer a:nth-child(2) {
+.footer button:nth-child(2) {
   color: white;
   padding: 0.5rem;
   box-shadow: 1px 1px 2px #00168f;
@@ -91,17 +91,17 @@
     "Lucida Sans", Arial, sans-serif;
 }
 
-.footer a:focus {
+.footer button:focus {
   outline: 0;
 }
 
-.footer a:active {
+.footer button:active {
   background-color: #125b2e;
   background-image: none;
   box-shadow: none;
 }
 
-.footer a:nth-child(2):active {
+.footer button:nth-child(2):active {
   background-color: #dc3509;
   background-image: none;
   box-shadow: none;
@@ -121,7 +121,7 @@
   background-color: #d3e5fb;
   border-left: #a2b7d6 solid 1px;
   height: 100%;
-  width: 50%;
+  width: 35%;
 }
 
 .cv {
@@ -137,26 +137,50 @@
   margin-right: 0.5rem;
 }
 
-.blue a {
+.blue button {
+  width: 100%;
+  border: none;
   padding: 0.5rem;
   display: flex;
   text-decoration: none;
   align-items: center;
   font-weight: 900;
   color: #00168f;
+  cursor: pointer;
 }
 
-.blue a:hover {
+.blue button:hover {
   background-color: #255fdc;
 }
 
 .white {
   background-color: white;
   height: 100%;
-  width: 50%;
+  width: 65%;
+  padding: .75rem;
 }
 
 .white p {
   padding: 0.25rem 0.5rem;
   line-height: 125%;
+}
+
+
+@media (max-width: 650px) {
+  .container {
+    width: 100vw;
+    height: 85vh;
+  }
+
+  .blue {
+    width: 30%;
+  }
+
+  .white {
+    width: 70%;
+  }
+
+  .blue img {
+    display: none;
+  }
 }
