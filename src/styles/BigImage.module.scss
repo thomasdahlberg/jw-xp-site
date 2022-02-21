@@ -1,11 +1,7 @@
 .bigimg {
-  position: fixed;
-  top: 5rem;
-  left: 20vw;
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 80%;
   align-items: center;
 }
 
@@ -50,4 +46,14 @@
 .imgnav {
   position: relative;
   top: 0;
+}
+
+@media (max-width: 650px) {
+  .bigimg {
+    width: 100%;
+  }
+
+  .imgnav {
+    display: none;
+  }
 }

@@ -103,29 +103,13 @@ class Window extends Component{
     }
 
     render(){
-        const posStyle = {
-            position: "fixed",
-            left: this.props.name === "Painting" ?
-                    "100px" : 
-                    this.props.name === "Videos" ?
-                        "120px" :
-                        this.props.name === "Photo" ?
-                        "140px" : "160px",
-            top: this.props.name === "Painting" ?
-                    "30px" : 
-                    this.props.name === "Videos" ?
-                        "50px" :
-                        this.props.name === "Photo" ?
-                        "70px" : "90px",
-            zIndex: this.props.topWindow ? 14 : 10,
-        }
         return(
             <Draggable
                 axis="both"
                 handle=".handle"
             >
             {this.props.active && !this.props.hidden ? 
-                <div className={styles.container} style={posStyle}>
+                <div className={styles.container}>
                     <div className="handle">
                         <div className={styles.titleBar}>
                             <p>{this.props.name}</p>

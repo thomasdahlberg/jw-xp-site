@@ -1,11 +1,8 @@
 .caption {
   z-index: 10;
-  position: fixed;
-  left: 0;
   width: 30%;
   background-color: #79a1e9;
   background-image: linear-gradient(0deg, #6376d5, #79a1e9);
-  height: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,4 +56,34 @@
 
 .panbody i {
   margin-right: 1rem;
+}
+
+@media (max-width: 650px) {
+  .caption {
+    height: 35%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .panel {
+    margin: .5rem;
+  }
+
+  .panbody {
+    margin: 0;
+  }
+
+  .panbody li {
+    padding-bottom: .25rem;
+  }
+
+  .panbody p, i {
+    margin-top: .35rem;
+    margin-bottom: .35rem;
+  }
+
+  .panheader p {
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+  }
 }

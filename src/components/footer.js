@@ -28,7 +28,7 @@ class Footer extends Component {
   render(){
     return (
       <footer className={footerStyles.footer}>
-          <button className={footerStyles.start} id="Start" onClick={this.props.handleHideWindow}>start</button>
+          <button className={footerStyles.start} id="Start" onClick={this.props.handleHideWindow}>{this.props.start ? 'close' : 'start'}</button>
           {this.props.painting ? <button id="Painting" className={this.props.hidePainting ? footerStyles.tab : footerStyles.maxTab} onClick={this.props.handleHideWindow}><img src="./images/foldericon.png" alt="folder-icon"/> Painting</button> : null}
           {this.props.photography ? <button id="Photography" className={this.props.hidePhotography ? footerStyles.tab : footerStyles.maxTab} onClick={this.props.handleHideWindow}><img src="./images/foldericon.png" alt="folder-icon"/> Photography</button> : null}
           {this.props.videos ? <button id="Videos" className={this.props.hideVideos ? footerStyles.tab : footerStyles.maxTab} onClick={this.props.handleHideWindow}><img src="./images/foldericon.png" alt="folder-icon"/> Videos</button> : null}

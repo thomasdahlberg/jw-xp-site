@@ -4,8 +4,16 @@
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  padding-bottom: 5rem;
 }
 
 .content img:hover {
   cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .content {
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
 }
