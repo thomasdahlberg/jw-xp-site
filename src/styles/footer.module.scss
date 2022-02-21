@@ -94,3 +94,13 @@
   font-family: "MS Sans-serif", sans-serif;
   font-size: 0.85rem;
 }
+
+@media (max-width: 650px) {
+  .tab, .max-tab {
+    padding-right: 1rem;
+    width: unset;
+  }
+  .clock {
+    padding-left: 1rem;
+  }
+}
