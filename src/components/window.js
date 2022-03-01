@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "../styles/window.module.scss";
 import Draggable from 'react-draggable';
 import Content from './content';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
-class Window extends Component{
-    constructor(props) {
-        super(props)
-        this.state = { 
-            imageIdx: this.getRandomInt(this.maxLibIdx)
-        }
-    }
-    
-    maxLibIdx = this.props.library.length;
+const Window = (props) => {
+    const maxLibIdx = props.library.length;
+    const matches = useMediaQuery('(min-width:650px)');
+    const getRandomInt = (maxIdx) => {
+        let randomValue = Math.random() * maxIdx;
+        return Math.floor(randomValue);
+    };
 
-    toggleBigImage = event => {
+    const [imageIdx, setImageIdx] = useState(getRandomInt(maxLibIdx));
+
+    const toggleBigImage = event => {
         console.log(event.currentTarget.id);
         const imageSrc = event.currentTarget.id === "maximize" 
             ? document.getElementById("bigImage").src
@@ -43,29 +44,24 @@ class Window extends Component{
         newImage.style.maxHeight = '80vh';
         newImage.style.maxWidth = '80vw';
     }    
-
-    getRandomInt = (maxIdx) => {
-        let randomValue = Math.random() * maxIdx;
-        return Math.floor(randomValue);
-    }
     
-    handleImageSelect = (e) => { 
+    const handleImageSelect = (e) => { 
         if(e.target.id === "l") {
-            this.state.imageIdx === 0 ?
-                this.setState({ imageIdx: this.maxLibIdx - 1 })
-                : this.setState({ imageIdx: this.state.imageIdx - 1 });
+            imageIdx === 0 ?
+                setImageIdx(maxLibIdx - 1)
+                : setImageIdx(imageIdx - 1);
         } else if(e.target.id === "r") {
-            this.state.imageIdx === this.maxLibIdx -1 ?
-                this.setState({ imageIdx: 0 })
-                : this.setState({ imageIdx: this.state.imageIdx + 1 });
+            imageIdx === maxLibIdx - 1 ?
+                setImageIdx(0)
+                : setImageIdx(imageIdx + 1);
         } else {
             e.target.localName === "img" ?
-            this.setState({ imageIdx: Number(e.target.id) })
-            : this.setState({ imageIdx: Number(e.target.attributes[1].nodeValue) });
+            setImageIdx(Number(e.target.id))
+            : setImageIdx(Number(e.target.attributes[1].nodeValue));
         }
     }
 
-    handleKeyDown = (e) => {
+    const handleKeyDown = (e) => {
         e.preventDefault();
         if(e.keyCode === 37){
             let event = { 
@@ -73,99 +69,96 @@ class Window extends Component{
                     id: "l"
                 }
             }
-            this.handleImageSelect(event)
+            handleImageSelect(event)
         }
         if(e.keyCode === 39){
             let event = { 
                 target: {
-                    id: "l"
+                    id: "r"
                 }
             }
-            this.handleImageSelect(event)
+            handleImageSelect(event)
         }
         if(e.keyCode === 27 || e.keyCode === 13){
-            this.handleToggleBigImage();      
+            // handleToggleBigImage();
+            console.log('handleToggleBigImage');      
         }
         return false;
     }
-    
-    componentDidMount(){
-        document.addEventListener("keydown", this.handleKeyDown);
-    }
 
-    componentWillUnmount(){
-        document.removeEventListener("keydown", this.handleKeyDown);
-    }
+    useEffect(() => {
+        document.addEventListener("keydown", handleKeyDown);
 
+        return function cleanup() {
+            document.removeEventListener("keydown", handleKeyDown);
+        };
+    });
 
-    handleMaximizeWindow = () => {
-        console.log('handleMaximizeWindow');
-    }
-
-    render(){
-        return(
-            <Draggable
-                axis="both"
-                handle=".handle"
-            >
-            {this.props.active && !this.props.hidden ? 
-                <div className={styles.container}>
-                    <div className="handle">
-                        <div className={styles.titleBar}>
-                            <p>{this.props.name}</p>
-                            <div className={styles.titlebtns}>
-                                <button 
-                                    id={this.props.name}
-                                    aria-label="Minimize Window"
-                                    onClick={this.props.handleHideWindow}
-                                >
-                                    <i
-                                        id={this.props.name} 
-                                        onClick={this.props.handleHideWindow} 
-                                        className={"fa fa-window-minimize"} 
-                                        aria-hidden="true"
-                                    ></i>
-                                </button>    
-                                <button
-                                    id="maximize"
-                                    aria-label="Maximize Window"
-                                    onClick={this.toggleBigImage}
-                                >
-                                    <i 
-                                        id={this.props.name} 
-                                        className={"fa fa-window-maximize"}
-                                        aria-hidden="true"
-                                    ></i>
-                                </button>    
-                                <button 
-                                    id={this.props.name}
-                                    className={styles.close} 
-                                    onClick={this.props.handleCloseWindow}
-                                >X
-                                </button>    
-                            </div>
+    return(
+        <Draggable
+            axis="both"
+            handle=".handle"
+            cancel={matches ? "" : ".window-button"}
+        >
+        {props.active && !props.hidden ? 
+            <div className={styles.container}>
+                <div className="handle">
+                    <div className={styles.titleBar}>
+                        <p>{props.name}</p>
+                        <div className={styles.titlebtns}>
+                            <button 
+                                id={props.name}
+                                aria-label="Minimize Window"
+                                onClick={props.handleHideWindow}
+                                className="window-button"
+                            >
+                                <i
+                                    id={props.name} 
+                                    onClick={props.handleHideWindow} 
+                                    className={"fa fa-window-minimize"} 
+                                    aria-hidden="true"
+                                ></i>
+                            </button>    
+                            <button
+                                id="maximize"
+                                aria-label="Maximize Window"
+                                onClick={toggleBigImage}
+                                className="window-button"
+                            >
+                                <i 
+                                    id={props.name} 
+                                    className={"fa fa-window-maximize"}
+                                    aria-hidden="true"
+                                ></i>
+                            </button>    
+                            <button 
+                                id={props.name}
+                                className={`${styles.close} window-button`} 
+                                onClick={props.handleCloseWindow}
+                            >X
+                            </button>    
                         </div>
                     </div>
-                    <div className={styles.toolBar}>
-                        <ul className={styles.menus}>
-                            <li>File</li>
-                            <li>Edit</li>
-                            <li>View</li>
-                        </ul>
-                    </div>
-                    <Content
-                        library={this.props.library}
-                        imageIdx={this.state.imageIdx}
-                        toggleBigImage={this.toggleBigImage}
-                        handleImageSelect={this.handleImageSelect}
-                    /> 
                 </div>
-                :
-                <div></div>
-            }  
-            </Draggable>
-        )
-    }
-}
-
+                <div className={styles.toolBar}>
+                    <ul className={styles.menus}>
+                        <li>File</li>
+                        <li>Edit</li>
+                        <li>View</li>
+                    </ul>
+                </div>
+                <Content
+                    library={props.library}
+                    imageIdx={imageIdx}
+                    toggleBigImage={toggleBigImage}
+                    handleImageSelect={handleImageSelect}
+                /> 
+            </div>
+            :
+            <div></div>
+        }  
+        </Draggable>
+    )
+};    
+    
 export default Window;

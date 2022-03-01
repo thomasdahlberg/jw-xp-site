@@ -1,17 +1,19 @@
 import React from 'react';
 import styles from '../styles/display.module.scss';
 import Draggable from 'react-draggable';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const Display = (props) =>  {
     const folderIconURI = "./images/foldericon.png";
+    const matches = useMediaQuery('(min-width:650px)');
     
     return(
         <div className={styles.container}>
             <nav className={styles.navIcons}>
-                <Draggable axis="both">
+                <Draggable axis="both" cancel={matches ? "" : ".window-button"}>
                     <button 
                         id="Painting"
-                        className={styles.icon} 
+                        className={`${styles.icon} window-button`} 
                         onClick={props.handleClickWindow}
                     >
                         <img 
@@ -23,10 +25,10 @@ const Display = (props) =>  {
                         <p id="Painting">Painting</p>
                     </button>
                 </Draggable>
-                <Draggable axis="both">
+                <Draggable axis="both" cancel={matches ? "" : ".window-button"}>
                     <button 
                         id="Videos" 
-                        className={styles.icon}
+                        className={`${styles.icon} window-button`}
                         onClick={props.handleClickWindow}
                     >
                         <img 
@@ -38,10 +40,10 @@ const Display = (props) =>  {
                         <p id="Videos">Videos</p>
                     </button>
                 </Draggable>
-                <Draggable axis="both">
+                <Draggable axis="both" cancel={matches ? "" : ".window-button"}>
                     <button 
                         id="Photography" 
-                        className={styles.icon} 
+                        className={`${styles.icon} window-button`} 
                         onClick={props.handleClickWindow}
                     >
                         <img 
@@ -53,10 +55,10 @@ const Display = (props) =>  {
                         <p id="Photography">Photography</p>
                     </button>
                 </Draggable>
-                <Draggable axis="both">
+                <Draggable axis="both" cancel={matches ? "" : ".window-button"}>
                     <button 
                         id="Recycle Bin" 
-                        className={styles.icon}
+                        className={`${styles.icon} window-button`}
                         onClick={props.handleClickWindow}
                     >
                         <img 
