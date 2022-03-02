@@ -27,24 +27,6 @@ const Start = (props) => {
                     blended within the painting is an attempt to find a childlike understanding of the inaccuracies and
                     indecisiveness of racial classifications of Black Americans and the achromatic color they both share.
                     </p>
-                    <p>My work uses satire and visual riposte to challenge the ambiguity of the black construct as both an
-                    object and abject. What started as an inquiry about the discursive formation of the black race by my
-                    then five-year-old daughter followed my investigation into the subject within American society both
-                    past and present. The black construct is complicated, fluid, and unreliable with anthropomorphic
-                    qualities. The “truth” of race and complexities is intrinsic to our lives yet as my daughter reminds me
-                    daily it's not as complex as we make it. The use of various photographic, technology, and fiber materials
-                    blended within the painting is an attempt to find a childlike understanding of the inaccuracies and
-                    indecisiveness of racial classifications of Black Americans and the achromatic color they both share.
-                    </p>
-                    <p>My work uses satire and visual riposte to challenge the ambiguity of the black construct as both an
-                    object and abject. What started as an inquiry about the discursive formation of the black race by my
-                    then five-year-old daughter followed my investigation into the subject within American society both
-                    past and present. The black construct is complicated, fluid, and unreliable with anthropomorphic
-                    qualities. The “truth” of race and complexities is intrinsic to our lives yet as my daughter reminds me
-                    daily it's not as complex as we make it. The use of various photographic, technology, and fiber materials
-                    blended within the painting is an attempt to find a childlike understanding of the inaccuracies and
-                    indecisiveness of racial classifications of Black Americans and the achromatic color they both share.
-                    </p>
                 </div>
             );
         }
@@ -53,7 +35,7 @@ const Start = (props) => {
             return <iframe title="CV" src="https://docs.google.com/document/d/e/2PACX-1vQprLr5FSSekGNBr1xWVnoXs_HWJApTMmNPGkLC3UB5h6vtMfu-qh083BavZ6iU2-IkKArmhQtRAWCi/pub?embedded=true" width={'100%'} height={'100%'} style={{border: 'none'}}></iframe>
         }
 
-        return <iframe title="Playlist" src="https://open.spotify.com/embed/playlist/6farw4JbL8WaKGQ9QOoGVv?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        return <iframe title="Playlist" src="https://open.spotify.com/embed/playlist/6farw4JbL8WaKGQ9QOoGVv?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     }
 
     const displaySection = displayInfo();

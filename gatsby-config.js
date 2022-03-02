@@ -26,7 +26,7 @@ module.exports = {
           useNullAsDefault: true
         },
         queryChain: function(query) {
-          return query.select("title", "file", "year", "materials", "dimensions", "type").from("ARTWORK")
+          return query.select("title", "file", "year", "materials", "dimensions", "type", "link").from("ARTWORK")
         }
       }
     },

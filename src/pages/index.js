@@ -36,7 +36,6 @@ class Desktop extends Component {
   }
 
   handleCloseOtherWindows = (activeWindow) => {
-    console.log('close other winddows');
     let allWindows = ['Painting', 'Videos', 'Photography', 'Recycling Bin'];
     for (const singleWindow of allWindows) {
       if (singleWindow !== activeWindow) {
@@ -56,10 +55,8 @@ class Desktop extends Component {
   }
 
   handleHideWindow = (e) => {
-    console.log(e.target.id);
     e.preventDefault();
     if(e.target.id === 'Start') {
-      console.log('pushed start button');
       this.handleCloseOtherWindows(e.target.id);
     }
     if(this.state[`hide${e.target.id}`]){

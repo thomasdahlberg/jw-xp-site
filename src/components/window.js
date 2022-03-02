@@ -15,13 +15,14 @@ const Window = (props) => {
     const [imageIdx, setImageIdx] = useState(getRandomInt(maxLibIdx));
 
     const toggleBigImage = event => {
-        console.log(event.currentTarget.id);
         const imageSrc = event.currentTarget.id === "maximize" 
-            ? document.getElementById("bigImage").src
+            ? document.getElementById("bigImage")?.src
             : event.currentTarget.querySelector('img').src;
+        if(!imageSrc) {
+            return null;
+        }
         const newDiv = document.createElement("BUTTON");
         newDiv.onclick = function () {
-            console.log("removing big image");
             this.parentElement.removeChild(this);
         };
         const newImage = document.createElement("IMG");

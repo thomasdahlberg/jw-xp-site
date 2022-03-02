@@ -18,6 +18,7 @@ const Windows = (props) => {
                                 materials
                                 dimensions
                                 type
+                                link
                             }
                         }
                     }
