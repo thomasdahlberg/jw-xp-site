@@ -3,6 +3,9 @@ import styles from '../styles/start.module.scss';
 
 const START_SECTIONS = ['bio', 'cv', 'statement', 'music'];
 
+const CV = require("../../public/images/JWIICV.pdf");
+
+
 const Start = (props) => {
     const [activeSection, setActiveSection] = useState('bio');
 
@@ -32,7 +35,7 @@ const Start = (props) => {
         }
 
         if(activeSection === 'cv') {
-            return <iframe title="CV" src="https://docs.google.com/document/d/e/2PACX-1vQprLr5FSSekGNBr1xWVnoXs_HWJApTMmNPGkLC3UB5h6vtMfu-qh083BavZ6iU2-IkKArmhQtRAWCi/pub?embedded=true" width={'100%'} height={'100%'} style={{border: 'none'}}></iframe>
+            return <iframe title="CV" src={CV} width={'100%'} height={'100%'} style={{border: 'none'}}></iframe>
         }
 
         return <iframe title="Playlist" src="https://open.spotify.com/embed/playlist/6farw4JbL8WaKGQ9QOoGVv?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
