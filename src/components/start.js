@@ -35,10 +35,10 @@ const Start = (props) => {
         }
 
         if(activeSection === 'cv') {
-            return <iframe title="CV" src={CV} width={'100%'} height={'100%'} style={{border: 'none'}}></iframe>
+            return <iframe title="CV" frameBorder="0" src={CV} width={'100%'} height={'100%'} style={{border: 'none'}}></iframe>
         }
 
-        return <iframe title="Playlist" src="https://open.spotify.com/embed/playlist/6farw4JbL8WaKGQ9QOoGVv?utm_source=generator&theme=0" width="100%" height="380" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        return <iframe title="Playlist" frameBorder="0" width={'100%'} height={'100%'} src="https://embed.music.apple.com/us/playlist/jw-painting-playlist/pl.u-4JommxbIMzNm16"></iframe>
     }
 
     const displaySection = displayInfo();
