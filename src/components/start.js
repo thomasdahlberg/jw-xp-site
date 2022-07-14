@@ -44,19 +44,19 @@ const Start = (props) => {
     const displaySection = displayInfo();
 
     useEffect(() => {
-        try {
-            for(const section of START_SECTIONS) {
-                if(activeSection === section) {
+        for(const section of START_SECTIONS) {
+            if(activeSection === section) {
+                if(document.getElementById(activeSection)) {
                     document.getElementById(activeSection).style.backgroundColor = "#00168f";
                     document.getElementById(activeSection).style.color = "white";
-                } else {
+                }
+            } else {
+                if(document.getElementById(section)) {
                     document.getElementById(section).style.backgroundColor = "unset";
                     document.getElementById(section).style.color = "#00168f";
                 }
-            }            
-        } catch (error) {
-            console.log(error);
-        }
+            }
+        }            
     });
     return(
         <div>

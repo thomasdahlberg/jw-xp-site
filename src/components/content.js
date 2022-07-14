@@ -22,6 +22,7 @@ const Content = (props) => {
                 handleImageSelect={props.handleImageSelect}
                 handleKeyDown={props.handleKeyDown}
                 toggleBigImage={props.toggleBigImage}
+                isZoomedIn={props.isZoomedIn}
             />
             <Gallery
                 library={props.library}

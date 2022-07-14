@@ -7,43 +7,23 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 const Window = (props) => {
     const maxLibIdx = props.library.length;
     const matches = useMediaQuery('(min-width:650px)');
+    const isMobile = useMediaQuery('(max-width: 649px)');
     const getRandomInt = (maxIdx) => {
         let randomValue = Math.random() * maxIdx;
         return Math.floor(randomValue);
     };
 
     const [imageIdx, setImageIdx] = useState(getRandomInt(maxLibIdx));
+    const [isZoomedIn, setIsZoomedIn] = useState(false);
 
-    const toggleBigImage = event => {
+    const toggleBigImage = (event) => {
         const imageSrc = event.currentTarget.id === "maximize" 
             ? document.getElementById("bigImage")?.src
             : event.currentTarget.querySelector('img').src;
         if(!imageSrc) {
             return null;
         }
-        const newDiv = document.createElement("BUTTON");
-        newDiv.onclick = function () {
-            this.parentElement.removeChild(this);
-        };
-        const newImage = document.createElement("IMG");
-        newImage.src = imageSrc;
-        newDiv.appendChild(newImage);
-        document.getElementById("desktop").appendChild(newDiv);
-        newDiv.style.zIndex = '1000';
-        newDiv.style.position = 'fixed';
-        newDiv.style.top = '0';
-        newDiv.style.left = '0';
-        newDiv.style.display = 'flex';
-        newDiv.style.justifyContent = 'center';
-        newDiv.style.alignItems = 'center';
-        newDiv.style.background = "rgba(0,0,0,0.9)";
-        newDiv.style.width = '100vw';
-        newDiv.style.height = '100vh';
-        newDiv.style.outline = 'none';
-        newDiv.style.border = 'none';
-        newDiv.style.cursor = 'zoom-out';
-        newImage.style.maxHeight = '80vh';
-        newImage.style.maxWidth = '80vw';
+        isZoomedIn ? setIsZoomedIn(false) : setIsZoomedIn(true);
     }    
     
     const handleImageSelect = (e) => { 
@@ -100,6 +80,8 @@ const Window = (props) => {
             axis="both"
             handle=".handle"
             cancel={matches ? "" : ".window-button"}
+            defaultPosition={{ x: 100, y: 30 }}
+            position={isZoomedIn || isMobile ? { x: 0, y: 0} : undefined}
         >
         {props.active && !props.hidden ? 
             <div className={styles.container}>
@@ -153,6 +135,7 @@ const Window = (props) => {
                     imageIdx={imageIdx}
                     toggleBigImage={toggleBigImage}
                     handleImageSelect={handleImageSelect}
+                    isZoomedIn={isZoomedIn}
                 /> 
             </div>
             :

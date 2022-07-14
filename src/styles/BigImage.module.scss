@@ -21,6 +21,33 @@
   height: 80%;
   justify-content: center;
   background-color: #fff;
+  cursor: zoom-in;
+}
+
+.zoomed {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.9);
+  width: 100vw;
+  height: 100vh;
+  outline: none;
+  border: none;
+}
+
+.zoomed img {
+  max-height: 80vh;
+  max-width: 80vw;
+}
+
+.zoomed button {
+  height: fit-content;
+  width: fit-content;
 }
 
 .imgnav button {
@@ -47,13 +74,37 @@
   position: relative;
   top: 0;
 }
+.imgnavzoomed button {
+  outline: none;
+  border: none;
+  margin: 0.5rem;
+  border-radius: 50%;
+  background-color: #0254e4;
+  font-size: 2rem;
+  padding: 0.4rem 1rem;
+  font-weight: 900;
+  color: #f9f8f8;
+  box-shadow: 2px 2px 2px #00168f;
+  text-shadow: 2px 2px black;
+}
+
+.imgnavzoomed button:active {
+  background-color: #338fff;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.imgnavzoomed {
+  position: relative;
+}
 
 @media (max-width: 650px) {
   .bigimg {
     width: 100%;
   }
 
-  .imgnav {
-    display: none;
+  .imgnavzoomed {
+    position: absolute;
+    bottom: 4rem;
   }
 }
