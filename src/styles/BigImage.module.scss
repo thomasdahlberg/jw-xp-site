@@ -41,7 +41,7 @@
 }
 
 .zoomed img {
-  max-height: 80vh;
+  max-height: 70vh;
   max-width: 80vw;
 }
 
@@ -99,9 +99,14 @@
     width: 100%;
   }
 
+  .zoomed img {
+    position: absolute;
+    top: 5rem;
+  }
+
   .imgnavzoomed {
     position: absolute;
-    bottom: 4rem;
+    bottom: 6rem;
   }
 
   .imgnav {
