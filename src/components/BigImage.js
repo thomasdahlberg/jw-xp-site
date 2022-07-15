@@ -11,10 +11,7 @@ const BigImage = (props) => {
     const tnabPDFURL = images(`./Recycle/TNAB.pdf`);
     const isZoomedStyleOffset = {
         transform: 'translate(-4px, -4px)'
-    }
-    const isZoomedCursor = {
-        cursor: 'zoomed-out'
-    }
+    };
 
     return(
         <div className={props.isZoomedIn ? styles.zoomed : styles.bigimg} style={props.isZoomedIn ? isZoomedStyleOffset : null}>

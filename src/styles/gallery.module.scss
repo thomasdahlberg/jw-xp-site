@@ -25,3 +25,10 @@
   border: none;
   background-color: #f9f8f8;
 }
+
+@media (max-width: 650px) {
+  .gallery {
+    display: none;
+  }
+
+}

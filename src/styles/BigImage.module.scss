@@ -70,10 +70,6 @@
   text-shadow: none;
 }
 
-.imgnav {
-  position: relative;
-  top: 0;
-}
 .imgnavzoomed button {
   outline: none;
   border: none;
@@ -106,5 +102,10 @@
   .imgnavzoomed {
     position: absolute;
     bottom: 4rem;
+  }
+
+  .imgnav {
+    position: absolute;
+    bottom: 1rem;
   }
 }
