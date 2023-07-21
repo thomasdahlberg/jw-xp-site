@@ -64,7 +64,10 @@ const Start = (props) => {
                 <div className={styles.container}>
                     <div className={styles.header}>
                         <img src="./images/avatar.png" alt="avatar"/>
-                        <h3>James Williams II</h3>    
+                        <div>
+                            <h3>James Williams II</h3>
+                            <a href="mailto:jwilliams2nd@gmail.com">jwilliams2nd@gmail.com</a>    
+                        </div>
                     </div>
                     <div className={styles.content}>
                         <section className={styles.white}>
