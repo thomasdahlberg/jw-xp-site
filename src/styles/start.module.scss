@@ -48,8 +48,25 @@
   box-shadow: 1px 1px 2px #00168f;
 }
 
-.header h3 {
+.header a {
+  text-decoration: none;
+  color: white;
+  padding-block-start: 0.5rem;
+}
+
+.header a:hover {
+  text-decoration: underline;
+}
+
+.header h3, .header a {
+  margin: 0;
   text-shadow: 2px 2px 2px #273e68;
+}
+
+.header div {
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 1rem;
 }
 
 .footer {
