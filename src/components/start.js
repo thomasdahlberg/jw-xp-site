@@ -66,7 +66,7 @@ const Start = (props) => {
                         <img src="./images/avatar.png" alt="avatar"/>
                         <div>
                             <h3>James Williams II</h3>
-                            <a href="mailto:jwilliams2nd@gmail.com">jwilliams2nd@gmail.com</a>    
+                            <a href="mailto:contact.jameswilliamsii@gmail.com">contact.jameswilliamsii@gmail.com</a>    
                         </div>
                     </div>
                     <div className={styles.content}>
